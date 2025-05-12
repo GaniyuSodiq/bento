@@ -21,3 +21,28 @@
         margin: 0 10vw;
     }
 }
+
+button{
+    color: #28282b;
+    border: 1px solid #28282b;
+    border-radius: 3px;
+    padding: 0.5vh 0;
+    background-color: #dedede;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+button:active{
+    background-color: #a1a1a1;
+}
+
+input{
+    border: 1px solid #28282b;
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 3px;
+}
+
+#generate-bento-link{
+    margin-top: 4vh;
+}

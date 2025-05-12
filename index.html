@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Bento</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="bento.js" defer></script>
 </head>
 <body>
-    
+    <h1 id="title">Link Bento</h1>
+    <P id="subtitle">Make A link launch box that you can send to your friends or family</P>
+    <h2>What is this?</h2>
+    <p>Inspired by the Japanese lunchbox "Bento". 
+        The idea is to create a lunchbox of carefully selected links that you want to send 
+        to your friend or family with a single link
+    </p>
+    <h2>Make Your Link</h2>
+
+    <form action="" id="bento-form">
+        <label for="bento-title">Title:</label>
+        <input type="text" id="bento-title">
+        <label for="bento-author">Author:</label>
+        <input type="text" id="bento-author">
+        <label for="bento-description">Description:</label>
+        <input type="text" id="bento-description">
+
+        <div id="links">
+            <!-- fill dynamically -->
+        </div>
+        <button id="add-button">Add Link</button>
+    </form>
+    <div>
+        <button id="generate-bento-link">Generate Bento Link</button>
+        <p id="generated-link"></p>
+        <span id="message"></span>
+        <button id="copy-button">Copy To Clipboard</button>
+    </div>
 </body>
 </html>

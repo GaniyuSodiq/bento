@@ -29,7 +29,13 @@ function createLinkForm() {
 
 function main() {
     const links = document.getElementById("links");
-    links.appendChild(createLinkForm())
+    links.appendChild(createLinkForm());
+
+    const addButton = document.getElementById("add-button");
+    addButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        links.appendChild(createLinkForm());
+    })
 }
 
 

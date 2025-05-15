@@ -78,7 +78,14 @@ function main() {
         }
         generatedLink.innerText = `${location.protocol}${location.host}/link.html?data=${window.btoa(encodeURIComponent(JSON.stringify(bentoData)))}`;
     })
-}
 
+    const copyButton = document.getElementById("copy-button");
+    copyButton.addEventListener("click", () => {
+        navigator.clipboard.writeText(generatedLink.innerText);
+        const message = document.getElementById("message");
+        message.innerText = "Link copied to clipboard!"
+        setTimeout(() => {message.innerText = ""}, 2000)
+    })
+}
 
 main()

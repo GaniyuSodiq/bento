@@ -52,3 +52,15 @@ input{
     flex-direction: column;
     flex-wrap: wrap;
 }
+
+#links {
+    margin: 3vh 0;
+}
+
+#links > * {
+    margin-top: 2vh 0;
+}
+
+#links > * > * {
+    margin-top: 1vh 0;
+}

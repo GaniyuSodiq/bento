@@ -23,6 +23,8 @@ function createLinkForm() {
     root.removeButton.addEventListener("click", () => {
         root.container.remove();
     })
+
+    return root.container;
 }
 
 function main() {

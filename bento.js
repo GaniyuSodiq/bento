@@ -76,7 +76,10 @@ function main() {
             bentoData.push(linkData); // PUSH THE LINKDATA OBJECT INTO BENTODATA ARRAY
             // THE OOBJECT WILL BE ADDED FOR AS MANY LINK CONTAINER WE HAVE IN THE PAGE
         }
+
     })
+    generatedLink.innerText = `${location.protocol}${location.host}/link.html?data=
+                            ${window.btoa(encodeURIComponent(JSON.stringify(bentoData)))}`;
 }
 
 

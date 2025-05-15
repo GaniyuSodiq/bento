@@ -19,6 +19,10 @@ function createLinkForm() {
     root.titleField.name = "title-field";
     root.descriptionField.placeholder = "Link description";
     root.descriptionField.name = "description-field";
+    root.removeButton.innerText = "Remove"
+    root.removeButton.addEventListener("click", () => {
+        root.container.remove();
+    })
 }
 
 function main() {

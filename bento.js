@@ -36,6 +36,14 @@ function main() {
         event.preventDefault();
         links.appendChild(createLinkForm());
     })
+
+    const generateBentoLink = document.getElementById("generate-bento-link");
+    const generatedLink = document.getElementById("generated-link");
+    generateBentoLink.addEventListener("click", (event){
+        event.preventDefault();
+        //  GET THE THE CONTENT IN THE LINKS CONTAINER - 
+        const links = document.getElementById("links").children;
+    })
 }
 
 

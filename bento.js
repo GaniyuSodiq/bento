@@ -28,7 +28,8 @@ function createLinkForm() {
 }
 
 function main() {
-
+    const links = document.getElementById("links");
+    links.appendChild(createLinkForm())
 }
 
 

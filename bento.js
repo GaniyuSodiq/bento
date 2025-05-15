@@ -39,16 +39,43 @@ function main() {
 
     const generateBentoLink = document.getElementById("generate-bento-link");
     const generatedLink = document.getElementById("generated-link");
+
     generateBentoLink.addEventListener("click", (event) => {
         event.preventDefault();
-        //  GET THE THE CONTENT IN THE LINKS CONTAINER - 
-        const links = document.getElementById("links").children;
 
+        // KEEP ALL THE FIRST PART (bento author, Title and Description) OF THE PAGE 
+        // INTO AN OBJECT OF AN ARRAY CALLED BENTODATA
         const bentoData = [{
             bentoTitle : document.getElementById("bento-title").value,
             bentoAuthor : document.getElementById("bento-author").value,
             bentoDescription : document.getElementById("bento-description").value,                        
         }]
+
+        // ADD ANOTHER OBJECT THAT CONTAINS ALL THE CONTENT OF THE LINKS CONTAINER
+        // INTO THE ARRAY CALLED BENTODATA
+        const links = document.getElementById("links").children;
+
+        // FOR EACH LINK CONTAINER IN THE LINKS CONTAINER RUN THIS LOOP
+        for (const link of links){
+            const linkData = {}; // MAKE AN OBJECT CALLED 
+            // FOR EACH ELEMENT IN THE LINK CONTAINER RUN THIS LOOP
+            for (const element of link.children){
+                if (element.name === "url-field"){
+                    linkData.urlField = element.value;
+                    continue;
+                }
+                if (element.name === "title-field"){
+                    linkData.titleField = element.value;
+                    continue;
+                }
+                if (element.name === "description-field"){
+                    linkData.descriptionField = element.value;
+                    continue;
+                }                                
+            }
+            bentoData.push(linkData); // PUSH THE LINKDATA OBJECT INTO BENTODATA ARRAY
+            // THE OOBJECT WILL BE ADDED FOR AS MANY LINK CONTAINER WE HAVE IN THE PAGE
+        }
     })
 }
 

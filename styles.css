@@ -46,3 +46,9 @@ input{
 #generate-bento-link{
     margin-top: 4vh;
 }
+
+.link{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

@@ -12,10 +12,17 @@ function createLinkForm() {
     root.container.appendChild(root.urlField);
     root.container.appendChild(root.titleField);
     root.container.appendChild(root.descriptionField);
+
+    root.urlField.placeholder = "Link";
+    root.urlField.name = "link-field";
+    root.titleField.placeholder = "Link Title";
+    root.titleField.name = "title-field";
+    root.descriptionField.placeholder = "Link description";
+    root.descriptionField.name = "description-field";
 }
 
 function main() {
-    
+
 }
 
 

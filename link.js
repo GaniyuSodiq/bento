@@ -34,7 +34,7 @@ function main(){
     bento.description.innerText = bentoMetaData.bentoDescription;
 
 
-    for (const link in bentoData){
+    for (const link of bentoData){
             console.log(bentoData);
 
         const linkCard = {

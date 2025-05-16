@@ -14,11 +14,9 @@ function main(){
         bentoContainer.innerText = "You entered an invalid URL";
         return;
     }
-    console.log(bentoData);
 
     // POP OUT THE FIRST PART OF THE BENTODATA USING SHIFT() AND SAVE INTO BENTOMETADATA
     const bentoMetaData = bentoData.shift();
-    console.log(bentoData);
 
     // NOW WE CREATE THE ELEMENT INWHICH WE ARE GOING TO DISPLAY THE DATA FROM BENTOMETADATA
     const bento = {
@@ -35,28 +33,23 @@ function main(){
 
 
     for (const link of bentoData){
-            console.log(bentoData);
 
         const linkCard = {
             container : document.createElement("div"),
             title : document.createElement("h4"),
             url : document.createElement("a"),
-            description : document.createElement("p")
+            description : document.createElement("p");
         }
 
         linkCard.title.innerText = link.titleField;
-        console.log(link)
         linkCard.url.innerText = link.urlField;
-        console.log(link.urlField)
         linkCard.url.href = link.urlField;
         linkCard.url.target = "_blank";
         linkCard.description.innerText = link.descriptionField;
-        console.log(link.descriptionField)
 
         linkCard.container.appendChild(linkCard.title);
         linkCard.container.appendChild(linkCard.url);
         linkCard.container.appendChild(linkCard.description);
-        console.log(linkCard.container)
         bento.linkContainer.appendChild(linkCard.container);
     }
 

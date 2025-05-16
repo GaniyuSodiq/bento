@@ -68,3 +68,11 @@ input{
 #generated-link{
     overflow-wrap: break-word;
 }
+
+#message {
+    margin: 2vh 0;
+}
+
+#copy-button{
+    margin-bottom: 8vh;
+}

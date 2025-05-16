@@ -14,7 +14,7 @@ function createLinkForm() {
     root.container.appendChild(root.descriptionField);
 
     root.urlField.placeholder = "Link";
-    root.urlField.name = "link-field";
+    root.urlField.name = "url-field";
     root.titleField.placeholder = "Link Title";
     root.titleField.name = "title-field";
     root.descriptionField.placeholder = "Link description";
@@ -76,6 +76,7 @@ function main() {
             bentoData.push(linkData); // PUSH THE LINKDATA OBJECT INTO BENTODATA ARRAY
             // THE OOBJECT WILL BE ADDED FOR AS MANY LINK CONTAINER WE HAVE IN THE PAGE
         }
+        console.log(bentoData);
         generatedLink.innerText = `${location.protocol}${location.host}/link.html?data=${window.btoa(encodeURIComponent(JSON.stringify(bentoData)))}`;
     })
 

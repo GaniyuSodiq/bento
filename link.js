@@ -30,7 +30,26 @@ function main(){
     bento.author.innerText = "Author: " + bentoMetaData.bentoAuthor;
     bento.description.innerText = bentoMetaData.bentoDescription;
 
+    for (const link in bentoData){
+        const linkCard = {
+            container : document.createElement("div"),
+            title : document.createElement("p"),
+            url : document.createElement("a"),
+            description : document.createElement("p")
+        }
 
+        linkCard.title.innerText = link.titleField;
+        linkCard.url.innerText = link.urlField;
+        linkCard.url.href = link.urlField;
+        linkCard.url.target = "_blank";
+        linkCard.description.innerText = link.descriptionField;
+
+        linkCard.container.appendChild(linkCard.title);
+        linkCard.container.appendChild(linkCard.url);
+        linkCard.container.appendChild(linkCard.description);
+
+        bento.linkContainer.appendChild(linkCard.container);
+    }
 }
 
 main()

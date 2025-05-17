@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Basket</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="container">
@@ -17,7 +17,7 @@
         </h3>
     </header>
     <main class="container">
-        <form action="/" class="column">
+        <form action="" class="column">
             <fieldset class="column">
                 <legend>Basket Details</legend>
                 <label for="basket-title">What is the title of this Basket?</label>
@@ -29,17 +29,17 @@
             </fieldset>
             <fieldset>
                 <legend>Add Links to Basket</legend>
-                <div class="basket">
-                    <div class="link">
+                <div id="basket">
+                    <!-- <div class="link">
                         <input type="url" placeholder="Link">
                         <input type="text" placeholder="Give this link a Title">
                         <input type="text" placeholder="Describe this link">
                         <button type="button" id="remove-this-link-btn">Remove This Link</button>
-                    </div>
+                    </div> -->
                 </div>
                 <button type="button" id="add-more-link-btn">Add More Link to Basket</button>
             </fieldset>
-            <button type="button" id="generate-basket-link">Generate Basket Link</button>
+            <button id="generate-basket-link">Generate Basket Link</button>
         </form>
         <p id="generated-link"></p>
         <button>Copy Basket Link</button>

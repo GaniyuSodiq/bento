@@ -92,3 +92,7 @@ button{
     border-radius: 5px;
     font-weight: bolder;
 }
+#generate-basket-link:hover {
+    background-color: rgb(1, 110, 1);
+
+}

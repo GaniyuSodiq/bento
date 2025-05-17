@@ -10,9 +10,10 @@
 <body>
     <header class="container">
         <h1>Link Basket</h1>
-        <h3>Imagine a basket that conatains as many links as you want that is <em>Link Basket</em>. <br>
-            Do you have a list of links you want to share to a friend or family? <br>
-            Add them below then generate a single link basket that contains all the links you added.
+        <h3>Imagine a basket that contains as many links as you want - that is <em>Link Basket</em>. <br>
+            Do you have a list of links you want to share to a friend or family?<br>
+            Sharing all the links one after the other would be boring. <br>
+            Add the links below then generate a single link basket that contains all the links you added.
         </h3>
     </header>
     <main class="container">
@@ -33,12 +34,12 @@
                         <input type="url" placeholder="Link">
                         <input type="text" placeholder="Give this link a Title">
                         <input type="text" placeholder="Describe this link">
-                        <button type="button">Remove This Link</button>
+                        <button type="button" id="remove-this-link-btn">Remove This Link</button>
                     </div>
                 </div>
-                <button type="button">Add More Link to Basket</button>
-                <button type="button">Generate Basket Link</button>
+                <button type="button" id="add-more-link-btn">Add More Link to Basket</button>
             </fieldset>
+            <button type="button">Generate Basket Link</button>
         </form>
         <p id="generated-link"></p>
         <button>Copy Basket Link</button>

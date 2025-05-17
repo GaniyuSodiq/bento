@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Basket</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Link Basket</h1>
+        <h3>Imagine a basket that conatains as many links as you want thank is <em>Link Basket</em>.
+            Do you have a list of links you want to share to a friend or family? 
+            Add them below then generate a single link basket that contains all the links you added.
+        </h3>
+    </header>
+    <main>
+        <form action="/">
+            <fieldset>
+                <legend>Basket Details</legend>
+                <label for="basket-title">What is the title of this Basket?</label>
+                <input type="text" id="basket-title" name="basket-title">
+                <label for="basket-description">Describe this basket in 100 - 140 characters</label>
+                <input type="text" id="basket-description" name="basket-description" minlength="100" maxlength="140">
+                <label for="author-name">What is your name</label>
+                <input type="text" id="author-name" name="author-name">
+            </fieldset>
+            <h2>Add Links to Basket</h2>
+            <div class="basket">
+                <div class="link">
+                    <input type="url" placeholder="Link">
+                    <input type="text" placeholder="Give this link a Title">
+                    <input type="text" placeholder="Describe this link">
+                    <button type="button">Remove This Link</button>
+                </div>
+            </div>
+            <button type="button">Add More Link to Basket</button>
+            <button type="button">Generate Basket Link</button>
+        </form>
+        <p id="generated-link"></p>
+        <button>Copy Basket Link</button>
+    </main>
+</body>
+</html>

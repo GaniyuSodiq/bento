@@ -49,5 +49,26 @@ generateBasketLink.addEventListener("click", (e) => {
         basketAuthor : document.querySelector("#basket-author").value
     }]
 
-    console.log(basketData);
+    const basketLinks = document.querySelector("#basket").children
+
+    for (const link of basketLinks){
+        const linkData = {}
+        for (const element of link.children) {
+            if (element.name === "link-title"){
+                linkData.linkTtile = element.value
+                
+            }
+            if (element.name === "link"){
+                linkData.link = element.value
+                
+            }
+            if (element.name === "link-description"){
+                linkData.linkDescription = element.value
+                
+            }
+        }
+        
+        basketData.push(linkData)
+    }
+
 })

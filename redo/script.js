@@ -71,4 +71,8 @@ generateBasketLink.addEventListener("click", (e) => {
         basketData.push(linkData)
     }
 
+    const generatedLink = document.querySelector("#generated-link");
+
+    generatedLink.textContent = window.btoa(basketData);
+
 })

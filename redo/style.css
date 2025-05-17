@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+}
+
+.container{
+    margin: 0 30vw;
+}
+
+fieldset{
+    padding: 10px;
+}
+
+legend{
+    background-color: #222;
+    color: #eee;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: .9rem;
+}
+
+fieldset input{
+    height: 5vh;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+}
+
+header h3{
+    font-size: .8rem;
+    line-height: 1.5;
+}

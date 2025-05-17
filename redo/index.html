@@ -26,17 +26,19 @@
                 <label for="author-name">What is your name?</label>
                 <input type="text" id="author-name" name="author-name">
             </fieldset>
-            <h2>Add Links to Basket</h2>
-            <div class="basket">
-                <div class="link">
-                    <input type="url" placeholder="Link">
-                    <input type="text" placeholder="Give this link a Title">
-                    <input type="text" placeholder="Describe this link">
-                    <button type="button">Remove This Link</button>
+            <fieldset>
+                <legend>Add Links to Basket</legend>
+                <div class="basket">
+                    <div class="link">
+                        <input type="url" placeholder="Link">
+                        <input type="text" placeholder="Give this link a Title">
+                        <input type="text" placeholder="Describe this link">
+                        <button type="button">Remove This Link</button>
+                    </div>
                 </div>
-            </div>
-            <button type="button">Add More Link to Basket</button>
-            <button type="button">Generate Basket Link</button>
+                <button type="button">Add More Link to Basket</button>
+                <button type="button">Generate Basket Link</button>
+            </fieldset>
         </form>
         <p id="generated-link"></p>
         <button>Copy Basket Link</button>

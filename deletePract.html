@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Practice</title>
+</head>
+<body>
+    <input type="text">
+    <button>Add</button>
+    <ul></ul>
+
+    <script>
+        const inp = document.querySelector("input")
+        const addBtn = document.querySelector("button")
+        const lis = document.querySelector("ul");
+        addBtn.addEventListener("click", () => {
+            btnClicked();
+        })
+
+        function btnClicked() {
+            const inpValue = inp.value;
+            inp.value = "";
+
+            const listItem = document.createElement("li")
+            const spanItem = document.createElement("span")
+            const deleteItem = document.createElement("button")
+
+            listItem.appendChild(spanItem)
+            listItem.appendChild(deleteItem)
+
+            spanItem.textContent = inpValue;
+            deleteItem.textContent = "Delete"
+
+            lis.appendChild(listItem)
+
+            deleteItem.addEventListener("click", () => {
+                listItem.remove();
+            })
+        }
+    </script>
+</body>
+</html>

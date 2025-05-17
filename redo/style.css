@@ -82,6 +82,13 @@ button{
 }
 
 #add-more-link-btn:hover{
-    background-color: rgba(1, 46, 1, 0.913);
-
+    background-color: rgba(1, 46, 1, 0.74);
+}
+#generate-basket-link{
+    background-color: green;
+    border: 1px solid green;
+    color: white;
+    height: 5vh;
+    border-radius: 5px;
+    font-weight: bolder;
 }

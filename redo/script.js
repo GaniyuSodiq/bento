@@ -1,4 +1,5 @@
 createBasketLink()
+
 const addMoreLink = document.getElementById("add-more-link-btn");
 addMoreLink.addEventListener("click", () => {
     createBasketLink()
@@ -37,4 +38,16 @@ function createBasketLink () {
     root.linkTtile.name = "link-title"
 }
 
+const generateBasketLink = document.querySelector("#generate-basket-link");
 
+generateBasketLink.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const basketData = [{
+        basketTitle : document.querySelector("#basket-title").value,
+        basketDescription : document.querySelector("#basket-description").value,
+        basketAuthor : document.querySelector("#basket-author").value
+    }]
+
+    console.log(basketData);
+})

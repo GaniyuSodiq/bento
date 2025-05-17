@@ -17,6 +17,9 @@ function createBasketLink () {
     root.linkDescription.placeholder = "Link Description";
     root.removeLinkButton.innerText = "Remove This Link";
     root.removeLinkButton.type = "button"
+    root.removeLinkButton.addEventListener("click", () => {
+        root.linkContainer.remove();
+    })
 
     root.linkContainer.appendChild(root.link);
     root.linkContainer.appendChild(root.linkTitle);

@@ -9,6 +9,7 @@ function main(){
     try {
         // CONVERT THE DATA BACK TO AN ARRAY AND STORE THE ARRAY INTO BENTODATA
         bentoData = JSON.parse(decodeURIComponent(window.atob(data)));
+        console.log(window.atob(data));
     } catch (error) {
         // IF BENTODATA GETS AN ERROR, THEN RUN THE CODE HERE
         bentoContainer.innerText = "You entered an invalid URL";
@@ -38,7 +39,7 @@ function main(){
             container : document.createElement("div"),
             title : document.createElement("h4"),
             url : document.createElement("a"),
-            description : document.createElement("p");
+            description : document.createElement("p")
         }
 
         linkCard.title.innerText = link.titleField;

@@ -101,3 +101,15 @@ button{
     overflow: auto;
     /* overflow-wrap: break-word; */
 }
+
+#generated{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#message{
+    font-weight: bold;
+}

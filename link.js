@@ -9,7 +9,6 @@ function main(){
     try {
         // CONVERT THE DATA BACK TO AN ARRAY AND STORE THE ARRAY INTO BENTODATA
         bentoData = JSON.parse(decodeURIComponent(window.atob(data)));
-        console.log(window.atob(data));
     } catch (error) {
         // IF BENTODATA GETS AN ERROR, THEN RUN THE CODE HERE
         bentoContainer.innerText = "You entered an invalid URL";

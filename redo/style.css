@@ -13,6 +13,10 @@ html{
     margin: 0 30vw;
 }
 
+.centered-text{
+    text-align: center;
+}
+
 fieldset{
     padding: 10px;
     margin: 2vh 0;
@@ -112,4 +116,12 @@ button{
 
 #message{
     font-weight: bold;
+}
+
+#link-basket-display{
+    background-color: rgba(1, 46, 1, 0.078);
+    color:#333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
 }

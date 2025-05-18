@@ -47,7 +47,16 @@ for (const link of basketData) {
     const urlField = document.createElement("a")
     const descriptionField = document.createElement("p")
 
+    // append the title url and description to the fieldset
     linkField.appendChild(titleField)
     linkField.appendChild(urlField)
     linkField.appendChild(descriptionField)
+
+    // append the fieldset to the div on page
+    linkBasketDisplay.appendChild(linkField)
+
+    titleField.textContent = link.linkTtile
+    urlField.textContent = link.link
+    urlField.href = link.link
+    descriptionField.textContent = link.linkDescription
 }

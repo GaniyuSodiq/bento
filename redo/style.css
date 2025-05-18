@@ -96,3 +96,8 @@ button{
     background-color: rgb(1, 110, 1);
 
 }
+
+#generated-link{
+    overflow: auto;
+    /* overflow-wrap: break-word; */
+}

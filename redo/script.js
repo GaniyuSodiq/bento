@@ -75,4 +75,16 @@ generateBasketLink.addEventListener("click", (e) => {
 
     generatedLink.textContent = `${location.protocol}.${location.host}/redo/index.html?data=${JSON.stringify(encodeURIComponent(window.btoa(basketData)))}`;
 
+    // MAKE THE COPY BUTTON
+    const generatedLinkBox = document.querySelector("#generated")
+    const copyGeneratedLinkButton = document.createElement("button");
+    generatedLinkBox.appendChild(copyGeneratedLinkButton)
+    copyGeneratedLinkButton.textContent = "Copy Link to Clipboard"
+    copyGeneratedLinkButton.addEventListener("click", (e) => {
+        e.preventDefault()
+        navigator.clipboard.writeText(generatedLink.textContent)
+        const message = document.querySelector("#message")
+        message.textContent = "Link Copied to Clipboard!"
+        setTimeout(() => {message.textContent = ""}, 2000)
+    })
 })

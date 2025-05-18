@@ -55,8 +55,10 @@ for (const link of basketData) {
     // append the fieldset to the div on page
     linkBasketDisplay.appendChild(linkField)
 
+    // put the content from the incoming data into the created elements
     titleField.textContent = link.linkTtile
     urlField.textContent = link.link
     urlField.href = link.link
+    urlField.target = "_blank"
     descriptionField.textContent = link.linkDescription
 }

@@ -118,12 +118,14 @@ button{
     font-weight: bold;
 }
 
-#basket-details-section{
+.basket-details-section{
     background-color: rgba(1, 46, 1, 0.078);
     color:#333;
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
+    display: grid;
+    gap: 10px;
 }
 
 #link-basket-display{

@@ -128,6 +128,15 @@ button{
     gap: 10px;
 }
 
-#link-basket-display{
+footer{
+    background-color: green;
+    border: 1px solid green;
+    color: white;
+    height: 5vh;
+    border-radius: 5px;
+    font-weight: bolder;
+}
 
+footer a:active, a:visited {
+    color: white;
 }

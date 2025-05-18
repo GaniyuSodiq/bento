@@ -47,5 +47,7 @@ for (const link of basketData) {
     const urlField = document.createElement("a")
     const descriptionField = document.createElement("p")
 
-
+    linkField.appendChild(titleField)
+    linkField.appendChild(urlField)
+    linkField.appendChild(descriptionField)
 }

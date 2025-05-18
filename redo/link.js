@@ -16,6 +16,7 @@ const basketDetails = basketData.shift()
 
 // create the HTML element where to put the details you decoded
 console.log(basketDetails)
+console.log(basketData)
 const basketTitle = document.createElement("h1")
 const basketDescription = document.createElement("p")
 const basketAuthor = document.createElement("h4")
@@ -37,3 +38,14 @@ basketAuthor.textContent = `Author: ${basketDetails.basketAuthor}`
 // append the div container to the div corrently on page
 linkBasketDisplay.appendChild(basketDetailsContainer);
 
+// loop throught the remaining object(s) in the incoming data and display on the page
+
+for (const link of basketData) {
+    // create the link field elements
+    const linkField = document.createElement("fieldset")
+    const titleField = document.createElement("h3")
+    const urlField = document.createElement("a")
+    const descriptionField = document.createElement("p")
+
+
+}

@@ -73,6 +73,6 @@ generateBasketLink.addEventListener("click", (e) => {
 
     const generatedLink = document.querySelector("#generated-link");
 
-    generatedLink.textContent = window.btoa(basketData);
+    generatedLink.textContent = `${location.protocol}.${location.host}/redo/index.html?data=${JSON.stringify(encodeURIComponent(window.btoa(basketData)))}`;
 
 })

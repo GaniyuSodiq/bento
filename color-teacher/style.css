@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #222;
+}
+
+.container{
+    margin: 0 30vw;
+    border: 1px solid gray;
+    height: 100vh;
+    border-radius: 5px;
+}
+
+header{
+    background-color: rgba(10, 243, 10, 0.146);
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+@media only screen and (max-width : 600px) {
+    .container{
+        margin: 0 10vw;
+    }
+}
+
+#color-box{
+    height: 10vh;
+    width: 10vw;
+    background-color: red;
+    margin: 10px auto;
+}
+

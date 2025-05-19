@@ -15,6 +15,11 @@ const colorArray = [
         code : "WHITE",
         audio : null,
     },
+    {
+        name : "GREEN",
+        code : "GREEN",
+        audio : null,
+    },
 ]
 
 // logic to pick random color from the array
@@ -25,8 +30,50 @@ console.log(randomColorSelection);
 const colorText = document.querySelector("#color-text")
 const colorBox = document.querySelector("#color-box")
 
-// loop through the array to teach each color and ask them to paint art-board
-for (let i = 0; i < colorArray.length; i++) {
-    colorText.textContent = `This is color ${colorArray[i].name}`
-    
+// get the header conatiner to append the color text and box
+const headerContainer = document.querySelector("header") 
+
+// using next and back button to move through the color array
+let count = 0;
+
+function displayColor() {
+    colorText.textContent = `This is color ${colorArray[count].name}`
+    headerContainer.appendChild(colorText)
+    colorBox.style.backgroundColor = colorArray[count].code
+    headerContainer.appendChild(colorBox)
 }
+displayColor()
+
+const nextBtn = document.querySelector("#nextBtn")
+const backBtn = document.querySelector("#backBtn")
+
+nextBtn.addEventListener("click", () => {
+    count ++
+    displayColor()
+})
+
+backBtn.addEventListener("click", () => {
+    count --
+    displayColor()
+})
+
+// loop through the array to teach each color and ask them to paint art-board
+// for (let i = 0; i < colorArray.length; i++) {
+
+//     colorText.textContent = ``
+//     colorBox.style.backgroundColor = ""
+//     colorText.textContent = `This is color ${colorArray[i].name}`
+//     headerContainer.appendChild(colorText)
+//     colorBox.style.backgroundColor = colorArray[i].code
+//     headerContainer.appendChild(colorBox)
+// }
+
+// for (const color of colorArray) {
+//     console.log(color)
+//     colorText.textContent = ``
+//     colorBox.style.backgroundColor = ""
+//     colorText.textContent = `This is color ${color.name}`
+//     headerContainer.appendChild(colorText)
+//     colorBox.style.backgroundColor = color.code
+//     headerContainer.appendChild(colorBox)
+// }

@@ -16,6 +16,12 @@
     border-radius: 5px;
 }
 
+@media only screen and (max-width : 700px) {
+    .container{
+        margin: 0 10vw;
+    }
+}
+
 header{
     background-color: rgba(10, 243, 10, 0.146);
     text-align: center;
@@ -24,16 +30,34 @@ header{
 
 }
 
-@media only screen and (max-width : 600px) {
-    .container{
-        margin: 0 10vw;
-    }
-}
-
 #color-box{
-    height: 10vh;
-    width: 10vw;
+    height: 70px;
+    width: 150px;
     background-color: red;
     margin: 10px auto;
 }
 
+main{
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+#art-board{
+    border: 1px solid grey;
+    padding: 0.3px;
+    /* display: inline-block; */
+    margin: 0 auto;
+}
+
+.row{    
+    display: flex;
+    border-color: green;
+}
+.col{
+    height: 30px;
+    width: 50px;
+    background-color: red;
+    margin: 0.5px;
+}

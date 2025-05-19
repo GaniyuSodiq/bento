@@ -44,6 +44,53 @@ function displayColor() {
 }
 displayColor()
 
+// making the main section
+
+    const mainSection = document.querySelector("main")
+    const menuH3 = document.createElement("h3")
+    const menuArtBoard = document.createElement("div")
+    menuArtBoard.classList.add("art-board")
+    const menuGoodJob = document.createElement("h4")
+    menuH3.textContent = `Paint the box below with the color ${colorArray[count].name}`
+
+    setTimeout(() => {
+        for (let i = 0; i < 7; i++) {
+            const rowDiv = document.createElement("div")
+            rowDiv.classList.add("row")
+            for (let j = 0; j < 5; j++) {
+                const colDiv = document.createElement("div")
+                colDiv.classList.add("col")
+                rowDiv.appendChild(colDiv)
+            }
+            menuArtBoard.appendChild(rowDiv)
+        };
+        mainSection.appendChild(menuH3)
+        menuGoodJob.textContent = "Good 👍"
+        mainSection.appendChild(menuArtBoard)
+        mainSection.appendChild(menuGoodJob)
+    }, 5000)
+
+
+// setTimeout(() => {
+//     const menuSection = document.querySelector("main")
+// const menuH3 = document.createElement("h3")
+// const menuArtBoard = document.createElement("div")
+// const menuGoodJob = document.createElement("h4")
+//     menuH3.textContent = `Paint the box below with the color ${colorArray[count].name}`
+//     for (let i = 1; i <= 7; i++) {
+//         const rowDiv = document.createElement("div").classList.add("row")
+//         for (let i = 1; i <= 5; i++) {
+//             const colDiv = document.createElement("div").classList.add("col")
+//             rowDiv.appendChild(colDiv)
+//         }
+//         menuArtBoard.appendChild(rowDiv)
+//     }
+//     menuGoodJob.textContent = "Good 👍"
+//     menuSection.appendChild(menuH3)
+//     menuSection.appendChild(menuArtBoard)
+//     menuSection.appendChild(menuGoodJob)
+// }, 5000)
+
 // setTimeout(() => {count = 2; displayColor()}, 5000)
 
 // DIDNT WORK

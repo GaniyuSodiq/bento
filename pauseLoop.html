@@ -4,13 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pausing Loop test</title>
+    <style>
+    .row{    
+    display: flex;
+    border-color: green;
+}
+    .col{
+    height: 30px;
+    width: 50px;
+    background-color: red;
+    margin: 0.5px;
+}
+    </style>
 </head>
 <body>
-    <div>HELLO WORLD</div>
+    <div id="container"></div>
 
     <script>
+
         const s = document.querySelector("div")
-        let i = 0
+        for (let i = 0; i < 7; i++) {
+            const rowDiv = document.createElement("div");
+            rowDiv.classList.add("row");
+            for (let j = 0; j < 5; j++) {
+                const colDiv = document.createElement("div");
+                colDiv.classList.add("col");     
+                rowDiv.appendChild(colDiv)           
+            }
+            s.appendChild(rowDiv);
+        };
+
+        // const rowDiv = document.createElement("div")
+        // rowDiv.classList.add("col")
+        // s.appendChild(rowDiv)
+
+
+        //     for (let i = 0; i < 7; i++) {
+        //     let rowDiv = document.createElement("div").classList.add("row");
+        //     for (let j = 0; j < 5; j++) {
+        //         let colDiv = document.createElement("div").classList.add("col");
+        //         rowDiv.appendChild(colDiv)
+        //     }
+        //     s.appendChild(rowDiv);
+        // };
+
+
+
+
+
+
+        // const s = document.querySelector("div")
+        // let i = 0
         //THIS WORKS BUT I DONT KNW HOW TO STOP THE LOOP YET
         // setInterval(function () {s.innerHTML = s.innerHTML + i.toString(); i++}, 2000);
         // setInterval(function () {s.innerHTML = s.innerHTML + i.toString(); i++}, 2000);

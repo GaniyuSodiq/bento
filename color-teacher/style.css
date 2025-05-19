@@ -44,7 +44,7 @@ main{
     padding: 20px 0;
 }
 
-.art-board{
+#art-board{
     border: 1px solid grey;
     padding: 0.3px;
     /* display: inline-block; */

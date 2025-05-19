@@ -21,29 +21,18 @@ const colorArray = [
         audio : null,
     },
 ]
+let count = 0;
+let hoveredBox = 0;
 
 // logic to pick random color from the array
-let randomColorSelection = colorArray[Math.floor(Math.random()*colorArray.length)].name;
-console.log(randomColorSelection);
+// let randomColorSelection = colorArray[Math.floor(Math.random()*colorArray.length)].name;
+// console.log(randomColorSelection);
 
 // Get the color-text and color-box from the HTML page
 const colorText = document.querySelector("#color-text")
 const colorBox = document.querySelector("#color-box")
-
-// get the header conatiner to append the color text and box
+// get the header continer to append the color text and box
 const headerContainer = document.querySelector("header") 
-
-// using next and back button to move through the color array
-let count = 0;
-
-function displayColor() {
-    colorText.textContent = `This is color ${colorArray[count].name}`
-    headerContainer.appendChild(colorText)
-    colorBox.style.backgroundColor = colorArray[count].code
-    headerContainer.appendChild(colorBox)
-}
-displayColor()
-
 // making the main section
 const mainSection = document.querySelector("main")
 const menuH3 = document.querySelector("#main-h3")
@@ -52,33 +41,56 @@ const menuGoodJob = document.querySelector("#main-h4")
 const artBoardCols = document.querySelectorAll("div.col")
 
 
-let hoveredBox = 0;
-menuH3.textContent = `Now paint the box below with the color ${colorArray[count].name}`
+// FUNCTION TO DISPLAY COLOR ON THE HEADER
+function displayColor() {
+    colorText.textContent = `This is color ${colorArray[count].name}`
+    headerContainer.appendChild(colorText)
+    colorBox.style.backgroundColor = colorArray[count].code
+    headerContainer.appendChild(colorBox)
+}
 
-console.log(artBoardCols)
+// FUNCTION TO DISPLAY COLOR ON THE ARTBOARD
+function displayArtBoard() {
+    menuH3.textContent = `Now paint the box below with the color ${colorArray[count].name}`
+    artBoardCols.forEach((artBoardCol) => {
+        artBoardCol.addEventListener("pointerover", () => {
+            artBoardCol.style.backgroundColor = colorArray[count].code
+            hoveredBox++;
+            // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
+            if (hoveredBox === 40){
+                console.log(hoveredBox)
+                menuGoodJob.textContent = "GOOD JOB 👍"
+            }
+        }) 
+    })
+}
 
-artBoardCols.forEach((artBoardCol) => {
-    artBoardCol.addEventListener("pointerover", () => {
-        artBoardCol.style.backgroundColor = colorArray[count].code
-        hoveredBox++;
-        // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
-        if (hoveredBox === 40){
-            console.log(hoveredBox)
-            menuGoodJob.textContent = "GOOD JOB 👍"
-        }
-    }) 
-})
+// FUNCTION TO CLEAR THE BOARD FOR NEXT COLOR DISPLAY
+function clearArtBoard() {
+    artBoardCols.forEach((artBoardCol) => {
+        artBoardCol.style.backgroundColor = ""
+    })
+    hoveredBox = 0    
+    menuGoodJob.textContent = ""
+}
 
-// CHANGE THE COLOR WITH BUTTONS
+// CHANGE THE COLOR WITH BUTTONS BY CLEARING THE BOARD AND RERUN THE DISPLAYS 
 nextBtn.addEventListener("click", () => {
     count ++
+    clearArtBoard()
     displayColor()
+    displayArtBoard() 
 })
 
 backBtn.addEventListener("click", () => {
     count --
+    clearArtBoard()
     displayColor()
+    displayArtBoard() 
 })
+
+displayColor()
+displayArtBoard() 
 
 // DIDNT WORK BCS YOU CAN ONLY SELECT MULTIPLE ELEMENT TOGETHER USING document.querySelectorAll()
 // BE IT A CLASS OR ID

@@ -44,19 +44,30 @@ function displayColor() {
 }
 displayColor()
 
-const nextBtn = document.querySelector("#nextBtn")
-const backBtn = document.querySelector("#backBtn")
+// setTimeout(() => {count = 2; displayColor()}, 5000)
 
-nextBtn.addEventListener("click", () => {
-    count ++
-    displayColor()
-})
+// DIDNT WORK
+// for (let i = 0; i < colorArray.length; i++) {
+//     count = i;
+//     setTimeout(displayColor(), 3000)
+// }
 
-backBtn.addEventListener("click", () => {
-    count --
-    displayColor()
-})
+// GOT THIS TO WORK
+// const nextBtn = document.querySelector("#nextBtn")
+// const backBtn = document.querySelector("#backBtn")
 
+// nextBtn.addEventListener("click", () => {
+//     count ++
+//     displayColor()
+// })
+
+// backBtn.addEventListener("click", () => {
+//     count --
+//     displayColor()
+// })
+
+
+// COULDNT GET THIS TO WORK
 // loop through the array to teach each color and ask them to paint art-board
 // for (let i = 0; i < colorArray.length; i++) {
 

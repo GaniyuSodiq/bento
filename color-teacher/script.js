@@ -21,3 +21,6 @@ const colorArray = [
 let randomColorSelection = colorArray[Math.floor(Math.random()*colorArray.length)].name;
 console.log(randomColorSelection);
 
+// Get the color-text and color-box from the HTML page
+const colorText = document.querySelector("#color-text")
+const colorBox = document.querySelector("#color-box")

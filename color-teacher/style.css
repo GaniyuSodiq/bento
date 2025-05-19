@@ -60,6 +60,7 @@ main{
     width: 50px;
     /* background-color: red; */
     margin: 0.5px;
+    cursor:pointer;
 }
 
 #next-back {

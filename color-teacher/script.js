@@ -82,6 +82,17 @@ displayColor()
         };
     }, 5000)
 
+    // CHANGE THE COLOR WITH BUTTONS
+    nextBtn.addEventListener("click", () => {
+    count ++
+    displayColor()
+    })
+
+    backBtn.addEventListener("click", () => {
+    count --
+    displayColor()
+    })
+
 
 // setTimeout(() => {
 //     const menuSection = document.querySelector("main")

@@ -63,7 +63,8 @@ main{
 }
 
 #next-back {
-    margin-top: 30px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 #next-back button{

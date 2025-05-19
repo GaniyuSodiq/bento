@@ -51,26 +51,35 @@ displayColor()
     const menuArtBoard = document.createElement("div")
     menuArtBoard.classList.add("art-board")
     const menuGoodJob = document.createElement("h4")
-    menuH3.textContent = `Paint the box below with the color ${colorArray[count].name}`
+    menuH3.textContent = `Now paint the box below with the color ${colorArray[count].name}`
 
     setTimeout(() => {
+        let hoveredBox = 0;
+        mainSection.appendChild(menuH3)
+        mainSection.appendChild(menuArtBoard)
+        mainSection.appendChild(menuGoodJob)
+        // CREATE THE ROW DIVS - parent for the col color divs
         for (let i = 0; i < 7; i++) {
             const rowDiv = document.createElement("div")
             rowDiv.classList.add("row")
+            // CREATE THE COL DIVS - 
             for (let j = 0; j < 5; j++) {
                 const colDiv = document.createElement("div")
                 colDiv.classList.add("col")
+                // ADD BGCOLOR OPON POINTOVER & COUNT IF HOVERED BOXES = 40
                 colDiv.addEventListener("pointerover", () => {
                     colDiv.style.backgroundColor = colorArray[count].code
+                    hoveredBox++;
+                    // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
+                    if (hoveredBox === 40){
+                        console.log(hoveredBox)
+                        menuGoodJob.textContent = "GOOD JOB 👍"
+                    }
                 })
                 rowDiv.appendChild(colDiv)
             }
             menuArtBoard.appendChild(rowDiv)
         };
-        mainSection.appendChild(menuH3)
-        menuGoodJob.textContent = "Good 👍"
-        mainSection.appendChild(menuArtBoard)
-        mainSection.appendChild(menuGoodJob)
     }, 5000)
 
 

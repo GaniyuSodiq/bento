@@ -60,6 +60,9 @@ displayColor()
             for (let j = 0; j < 5; j++) {
                 const colDiv = document.createElement("div")
                 colDiv.classList.add("col")
+                colDiv.addEventListener("pointerover", () => {
+                    colDiv.style.backgroundColor = colorArray[count].code
+                })
                 rowDiv.appendChild(colDiv)
             }
             menuArtBoard.appendChild(rowDiv)

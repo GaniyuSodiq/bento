@@ -58,7 +58,7 @@ main{
 .col{
     height: 30px;
     width: 50px;
-    background-color: red;
+    /* background-color: red; */
     margin: 0.5px;
 }
 

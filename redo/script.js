@@ -77,7 +77,22 @@ generateBasketLink.addEventListener("click", (e) => {
 
     // MAKE THE COPY BUTTON
     const generatedLinkBox = document.querySelector("#generated")
+    // for (const element of generatedLinkBox.children){
+    //     if (element.classList.contains === "btn"){
+    //         console.log(element)
+    //         element.remove()
+    //     }
+    // }
+    // generatedLinkBox.children.array.forEach(element => {
+    //     console.log(element)
+    // });
+    // console.log(generatedLinkBox.children.length)
+    // for (let i = 0; i < generatedLinkBox.children.length; i++) {
+    //     const element = array[i];
+        
+    // }
     const copyGeneratedLinkButton = document.createElement("button");
+    copyGeneratedLinkButton.classList.add("btn")
     generatedLinkBox.appendChild(copyGeneratedLinkButton)
     copyGeneratedLinkButton.textContent = "Copy Link to Clipboard"
     copyGeneratedLinkButton.addEventListener("click", (e) => {

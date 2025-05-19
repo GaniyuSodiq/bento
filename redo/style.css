@@ -137,6 +137,6 @@ footer{
     font-weight: bolder;
 }
 
-footer a:active, a:visited {
+footer a:active, footer a:visited {
     color: white;
 }

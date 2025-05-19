@@ -1,3 +1,4 @@
+// the colors and their respective details in an array of objects
 const colorArray = [
     {
         name : "RED",
@@ -16,5 +17,7 @@ const colorArray = [
     },
 ]
 
+// logic to pick random color from the array
 let randomColorSelection = colorArray[Math.floor(Math.random()*colorArray.length)].name;
 console.log(randomColorSelection);
+

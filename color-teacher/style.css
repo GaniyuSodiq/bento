@@ -61,6 +61,10 @@ main{
     padding: 20px 0;
 }
 
+#main-h3{
+    text-align: center;
+}
+
 #art-board{
     border: 1px solid grey;
     padding: 0.3px;

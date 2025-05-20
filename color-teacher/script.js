@@ -16,8 +16,8 @@ const colorArray = [
         audio : null,
     },
     {
-        name : "GREEN",
-        code : "GREEN",
+        name : "BLUE",
+        code : "BLUE",
         audio : null,
     },
 ]
@@ -53,18 +53,18 @@ function displayColor() {
 // FUNCTION TO DISPLAY COLOR ON THE ARTBOARD
 function displayArtBoard() {
     setTimeout(()=>{
-            menuH3.textContent = `Now paint the box below with the color ${colorArray[count].name}`
-        artBoardCols.forEach((artBoardCol) => {
-        artBoardCol.addEventListener("pointerover", () => {
-            artBoardCol.style.backgroundColor = colorArray[count].code
-            hoveredBox++;
-            // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
-            if (hoveredBox === 40){
-                console.log(hoveredBox)
-                menuGoodJob.textContent = "GOOD JOB 👍"
-            }
-        }) 
-    })
+        menuH3.textContent = `Now paint the box below with the color ${colorArray[count].name}`
+            artBoardCols.forEach((artBoardCol) => {
+                artBoardCol.addEventListener("pointerover", () => {
+                    artBoardCol.style.backgroundColor = colorArray[count].code
+                    hoveredBox++;
+                    // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
+                    if (hoveredBox === 40){
+                        console.log(hoveredBox)
+                        menuGoodJob.textContent = "GOOD JOB 👍"
+                    }
+                }) 
+            })
     }, 5000)
 }
 
@@ -75,6 +75,7 @@ function clearArtBoard() {
     })
     hoveredBox = 0    
     menuGoodJob.textContent = ""
+    menuH3.textContent = ""
 }
 
 // FUNCTION TO ADD OR REMOVE MAIN COVER after 5 seconds
@@ -86,10 +87,14 @@ function clearArtBoard() {
 
 // CHANGE THE COLOR WITH BUTTONS BY CLEARING THE BOARD AND RERUN THE DISPLAYS 
 nextBtn.addEventListener("click", () => {
-    count ++
-    clearArtBoard()
-    displayColor()
-    displayArtBoard() 
+    if (count < colorArray.length){
+        count ++
+        clearArtBoard()
+        displayColor()
+        displayArtBoard() 
+    } else{
+        menuH3.textContent = "YOU HAVE FINISHED THIS COLOR SECTION"
+    }
 })
 
 backBtn.addEventListener("click", () => {
@@ -101,7 +106,7 @@ backBtn.addEventListener("click", () => {
 
 displayColor()
 displayArtBoard() 
-mainCoverToggle()
+// mainCoverToggle()
 
 // DIDNT WORK BCS YOU CAN ONLY SELECT MULTIPLE ELEMENT TOGETHER USING document.querySelectorAll()
 // BE IT A CLASS OR ID

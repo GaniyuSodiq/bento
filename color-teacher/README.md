@@ -12,3 +12,8 @@ WHAT IS COLOR TEACHER ABOUT?
 - - Now paint the box below with color red
 - - Then displays (Good job 👍) if user paints the box completely
 - - picks another color randomly from the array
+
+MORE FEATURES I GOT ALONG THE LINE
+- Improve the interface to a better one
+- Add both primary and seconday color 
+- Teach, Test and grade(score) based on perfomance in the test. Recommend to retake test or lesson

@@ -11,8 +11,8 @@ const colorArray = [
         audio : null,
     },
     {
-        name : "WHITE",
-        code : "WHITE",
+        name : "YELLOW",
+        code : "YELLOW",
         audio : null,
     },
     {
@@ -40,6 +40,7 @@ const menuArtBoard = document.querySelector("#art-board")
 const menuGoodJob = document.querySelector("#main-h4")
 const artBoardCols = document.querySelectorAll("div.col")
 const mainCover = document.querySelector("#main-cover")
+menuArtBoard.classList.add("art-board")
 
 
 // FUNCTION TO DISPLAY COLOR ON THE HEADER
@@ -54,7 +55,6 @@ function displayColor() {
 // FUNCTION TO DISPLAY COLOR ON THE ARTBOARD
 function displayArtBoard() {
     setTimeout(()=>{
-        console.log(count)
         menuH3.textContent = `Now paint the box below with the color ${colorArray[count].name}`
             artBoardCols.forEach((artBoardCol) => {
                 artBoardCol.addEventListener("pointerover", () => {
@@ -91,7 +91,7 @@ function clearArtBoard() {
 nextBtn.addEventListener("click", () => {
     count ++
     if (count >= colorArray.length){
-        menuH3.textContent = "YOU HAVE FINISHED THIS COLOR SECTION"
+        menuH3.textContent = "THIS IS THE END. PRESS BACK TO TRY AGAIN"
         count --;        
     } else{
         clearArtBoard()
@@ -102,9 +102,14 @@ nextBtn.addEventListener("click", () => {
 
 backBtn.addEventListener("click", () => {
     count --
-    clearArtBoard()
-    displayColor()
-    displayArtBoard() 
+    if (count < 0){
+        menuH3.textContent = "THIS IS THE END. PRESS NEXT TO TRY AGAIN"
+        count ++;        
+    } else{
+        clearArtBoard()
+        displayColor()
+        displayArtBoard() 
+    } 
 })
 
 displayColor()

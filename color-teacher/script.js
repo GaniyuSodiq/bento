@@ -38,14 +38,13 @@ const mainSection = document.querySelector("#main")
 const menuH3 = document.querySelector("#main-h3")
 const menuArtBoard = document.querySelector("#art-board")
 const menuGoodJob = document.querySelector("#main-h4")
-const artBoardCols = document.querySelectorAll("div.col")
+let artBoardCols = document.querySelectorAll("div.col")
 const mainCover = document.querySelector("#main-cover")
 
 
 
 // FUNCTION TO DISPLAY COLOR ON THE HEADER
 function displayColor() {
-    console.log(count)
     colorText.textContent = `This is color ${colorArray[count].name}`
     headerContainer.appendChild(colorText)
     colorBox.style.backgroundColor = colorArray[count].code
@@ -63,8 +62,8 @@ function displayArtBoard() {
                     hoveredBox++;
                     // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
                     if (hoveredBox === 40){
-                        console.log(hoveredBox)
                         menuGoodJob.textContent = "GOOD JOB 👍"
+                        // nextColor()
                     }
                 }) 
             })
@@ -85,9 +84,23 @@ function clearArtBoard() {
 // FUNCTION TO ADD OR REMOVE MAIN COVER after 5 seconds
 // function mainCoverToggle() {
 //     setTimeout(()=>{
-//         mainSection.classList.toggle(".highZindex")
+//         mainSection.classList.toggle(".highZindex") // didnt work bcs o the . dot b4 highZindex
 //     }, 5000)
 // }
+
+// JUST NEXT AUTOMATICALLY
+
+function nextColor() {
+    count ++
+    if (count >= colorArray.length){
+        menuH3.textContent = "THIS IS THE END. PRESS BACK TO TRY AGAIN"
+        count --;        
+    } else{
+        clearArtBoard()
+        displayColor()
+        displayArtBoard() 
+    }
+}
 
 // CHANGE THE COLOR WITH BUTTONS BY CLEARING THE BOARD AND RERUN THE DISPLAYS 
 nextBtn.addEventListener("click", () => {

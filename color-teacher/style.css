@@ -35,22 +35,28 @@ fieldset {
     }
 }
 
+
 header{
+    height: 35vh;
     background-color: rgba(10, 243, 10, 0.146);
     text-align: center;
     padding: 20px;
     border-radius: 5px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
 }
+
 
 #color-box{
     height: 70px;
     width: 150px;
     /* background-color: red; */
-    /* margin: 10px auto; */
+    margin: 10px auto;
 }
 
 main{
+    height: 60vh;
     display: grid;
     justify-items: center;
     gap: 5px;

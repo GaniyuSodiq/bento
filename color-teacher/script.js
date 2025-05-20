@@ -1,71 +1,71 @@
 // the colors and their respective details in an array of objects
 let colorArray = [
     {
-        name : "RED",
-        code : "RED",
-        audio : null,
+        name: "RED",
+        code: "RED",
+        audio: null,
     },
     {
-        name : "GREEN",
-        code : "GREEN",
-        audio : null,
+        name: "GREEN",
+        code: "GREEN",
+        audio: null,
     },
     {
-        name : "YELLOW",
-        code : "YELLOW",
-        audio : null,
+        name: "YELLOW",
+        code: "YELLOW",
+        audio: null,
     },
     {
-        name : "BLUE",
-        code : "BLUE",
-        audio : null,
+        name: "BLUE",
+        code: "BLUE",
+        audio: null,
     },
 ]
 
 let primaryArray = [
     {
-        name : "RED",
-        code : "RED",
-        audio : null,
+        name: "RED",
+        code: "RED",
+        audio: null,
     },
     {
-        name : "GREEN",
-        code : "GREEN",
-        audio : null,
+        name: "GREEN",
+        code: "GREEN",
+        audio: null,
     },
     {
-        name : "YELLOW",
-        code : "YELLOW",
-        audio : null,
+        name: "YELLOW",
+        code: "YELLOW",
+        audio: null,
     },
     {
-        name : "BLUE",
-        code : "BLUE",
-        audio : null,
+        name: "BLUE",
+        code: "BLUE",
+        audio: null,
     },
 ]
 
 // CREATED THE SECONDARY COLORS
 let secondaryArray = [
     {
-        name : "PURPLE",
-        code : "PURPLE",
-        audio : null,
+        name: "PURPLE",
+        code: "PURPLE",
+        audio: null,
     },
     {
-        name : "ORANGE",
-        code : "ORANGE",
-        audio : null,
+        name: "ORANGE",
+        code: "ORANGE",
+        audio: null,
     },
     {
-        name : "VIOLET",
-        code : "VIOLET",
-        audio : null,
+        name: "VIOLET",
+        code: "VIOLET",
+        audio: null,
     },
     {
-        name : "GOLD",
-        code : "GOLD",
-        audio : null,
+        name: "GOLD",
+        code: "GOLD",
+        audio: null,
     },
 ]
 let count = 0;
@@ -79,7 +79,7 @@ let hoveredBox = 0;
 const colorText = document.querySelector("#color-text")
 const colorBox = document.querySelector("#color-box")
 // get the header continer to append the color text and box
-const headerContainer = document.querySelector("header") 
+const headerContainer = document.querySelector("header")
 // making the main section
 const mainSection = document.querySelector("#main")
 const menuH3 = document.querySelector("#main-h3")
@@ -93,22 +93,22 @@ const primaryColor = document.querySelector("#primary-color")
 const secondaryColor = document.querySelector("#secondary-color")
 
 // EMPTY THE CURRENT COLOR THEN FILL WITH THE SELECT COLORS OPON CLICK
-secondaryColor.addEventListener("change", ()=>{
+secondaryColor.addEventListener("change", () => {
     colorArray = [];
     colorArray = secondaryArray;
     count = 0;
     clearArtBoard()
     displayColor()
-    displayArtBoard() 
+    displayArtBoard()
 })
 
-primaryColor.addEventListener("change", ()=>{
+primaryColor.addEventListener("change", () => {
     colorArray = [];
     colorArray = primaryArray;
     count = 0;
     clearArtBoard()
-    displayColor()   
-    displayArtBoard()  
+    displayColor()
+    displayArtBoard()
 })
 
 // FUNCTION TO DISPLAY COLOR ON THE HEADER
@@ -121,20 +121,20 @@ function displayColor() {
 
 // FUNCTION TO DISPLAY COLOR ON THE ARTBOARD
 function displayArtBoard() {
-    setTimeout(()=>{
+    setTimeout(() => {
         menuH3.textContent = `Now paint the box below with the color ${colorArray[count].name}`
         menuArtBoard.classList.add("art-board")
-            artBoardCols.forEach((artBoardCol) => {
-                artBoardCol.addEventListener("pointerover", () => {
-                    artBoardCol.style.backgroundColor = colorArray[count].code
-                    hoveredBox++;
-                    // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
-                    if (hoveredBox === 40){
-                        menuGoodJob.textContent = "GOOD JOB 👍"
-                        // nextColor()
-                    }
-                }) 
+        artBoardCols.forEach((artBoardCol) => {
+            artBoardCol.addEventListener("pointerover", () => {
+                artBoardCol.style.backgroundColor = colorArray[count].code
+                hoveredBox++;
+                // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
+                if (hoveredBox === 40) {
+                    menuGoodJob.textContent = "GOOD JOB 👍"
+                    // nextColor()
+                }
             })
+        })
     }, 5000)
 }
 
@@ -143,7 +143,7 @@ function clearArtBoard() {
     artBoardCols.forEach((artBoardCol) => {
         artBoardCol.style.backgroundColor = ""
     })
-    hoveredBox = 0    
+    hoveredBox = 0
     menuGoodJob.textContent = ""
     menuH3.textContent = ""
     menuArtBoard.classList.remove("art-board")
@@ -159,50 +159,50 @@ function clearArtBoard() {
 // JUST NEXT AUTOMATICALLY
 
 function nextColor() {
-    count ++
-    if (count >= colorArray.length){
+    count++
+    if (count >= colorArray.length) {
         menuH3.textContent = "THIS IS THE END. PRESS BACK TO TRY AGAIN"
-        count --;        
-    } else{
+        count--;
+    } else {
         clearArtBoard()
         displayColor()
-        displayArtBoard() 
+        displayArtBoard()
     }
 }
 
 // CHANGE THE COLOR WITH BUTTONS BY CLEARING THE BOARD AND RERUN THE DISPLAYS 
 nextBtn.addEventListener("click", () => {
-    count ++
-    if (count >= colorArray.length){
+    count++
+    if (count >= colorArray.length) {
         menuH3.textContent = "THIS IS THE END. PRESS BACK TO TRY AGAIN"
-        count --;        
-    } else{
+        count--;
+    } else {
         clearArtBoard()
         displayColor()
-        displayArtBoard() 
+        displayArtBoard()
     }
 })
 
 backBtn.addEventListener("click", () => {
-    count --
-    if (count < 0){
+    count--
+    if (count < 0) {
         menuH3.textContent = "THIS IS THE END. PRESS NEXT TO TRY AGAIN"
-        count ++;        
-    } else{
+        count++;
+    } else {
         clearArtBoard()
         displayColor()
-        displayArtBoard() 
-    } 
+        displayArtBoard()
+    }
 })
 
 displayColor()
-displayArtBoard() 
+displayArtBoard()
 // mainCoverToggle()
 
 // DIDNT WORK BCS YOU CAN ONLY SELECT MULTIPLE ELEMENT TOGETHER USING document.querySelectorAll()
 // BE IT A CLASS OR ID
 // AND THE RESULT WILL AN ARRAY CONATAINING ALL THE ELEMENTS
-// SO YOU NEED TO ITERATE THROUGH ALL THE ELEMENTS IN THE ARRAY USING ARRAY MODIFYERS 
+// SO YOU NEED TO ITERATE THROUGH ALL THE ELEMENTS IN THE ARRAY USING ARRAY MODIFYERS
 // -eg array.forEach()
 // artBoardCol.addEventListener("pointerover", () => {
 //     artBoardCol.style.backgroundColor = colorArray[count].code
@@ -212,7 +212,7 @@ displayArtBoard()
 //         console.log(hoveredBox)
 //         menuGoodJob.textContent = "GOOD JOB 👍"
 //     }
-// })  
+// })
 
 
 // // making the main section
@@ -233,7 +233,7 @@ displayArtBoard()
 //         for (let i = 0; i < 7; i++) {
 //             const rowDiv = document.createElement("div")
 //             rowDiv.classList.add("row")
-//             // CREATE THE COL DIVS - 
+//             // CREATE THE COL DIVS -
 //             for (let j = 0; j < 5; j++) {
 //                 const colDiv = document.createElement("div")
 //                 colDiv.classList.add("col")

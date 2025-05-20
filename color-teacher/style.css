@@ -69,7 +69,7 @@ header{
 main{
     display: grid;
     justify-items: center;
-    gap: 10px;
+    gap: 5px;
     padding: 20px 0;
 }
 
@@ -97,11 +97,11 @@ main{
 }
 
 #next-back {
-    margin-top: 10px;
+    margin-top: 3px;
     text-align: center;
 }
 
 #next-back button{
     padding: 10px;
-    font-size: large;
+    font-size: 1rem;
 }

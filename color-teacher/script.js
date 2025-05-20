@@ -34,11 +34,12 @@ const colorBox = document.querySelector("#color-box")
 // get the header continer to append the color text and box
 const headerContainer = document.querySelector("header") 
 // making the main section
-const mainSection = document.querySelector("main")
+const mainSection = document.querySelector("#main")
 const menuH3 = document.querySelector("#main-h3")
 const menuArtBoard = document.querySelector("#art-board")
 const menuGoodJob = document.querySelector("#main-h4")
 const artBoardCols = document.querySelectorAll("div.col")
+const mainCover = document.querySelector("#main-cover")
 
 
 // FUNCTION TO DISPLAY COLOR ON THE HEADER
@@ -74,6 +75,13 @@ function clearArtBoard() {
     menuGoodJob.textContent = ""
 }
 
+// FUNCTION TO ADD OR REMOVE MAIN COVER after 5 seconds
+function mainCoverToggle() {
+    setTimeout(()=>{
+        mainSection.classList.toggle(".highZindex")
+    }, 5000)
+}
+
 // CHANGE THE COLOR WITH BUTTONS BY CLEARING THE BOARD AND RERUN THE DISPLAYS 
 nextBtn.addEventListener("click", () => {
     count ++
@@ -91,6 +99,7 @@ backBtn.addEventListener("click", () => {
 
 displayColor()
 displayArtBoard() 
+mainCoverToggle()
 
 // DIDNT WORK BCS YOU CAN ONLY SELECT MULTIPLE ELEMENT TOGETHER USING document.querySelectorAll()
 // BE IT A CLASS OR ID

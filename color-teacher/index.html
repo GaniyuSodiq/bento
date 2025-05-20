@@ -9,19 +9,6 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <fieldset id="color-selection">
-                <legend>COLOR TYPES</legend>
-                <label for="primary-color">Primary Colors</label> 
-                <input type="radio" id="primary-color" value="primary" name="colorSelection" checked>
-                <input type="radio" id="secondary-color" value="secondary" name="colorSelection">
-                <label for="secondary-color">Secondary Colors</label> 
-                <!-- <button id="primary-color">Primary Colors</button>
-                <button id="secondary-color">Secondary Colors</button> -->
-            </fieldset>
-            <h2 id="color-text"></h2>
-            <div id="color-box"></div>
-        </header>
         <main id="main">
             <h3 id="main-h3"></h3>
             <div id="art-board">
@@ -76,14 +63,25 @@
                 </div>
             </div>
             <h4 id="main-h4"></h4>
-            <!-- <h4>Next color loading...</h4> -->
-            <div id="next-back">
-                <button id="backBtn">👈 Previous Color</button>
-                <button id="nextBtn">Next Color👉</button>
-            </div> 
-        <!-- </main>
-        <main id="main-cover"> -->
         </main>
+
+        <header>
+            <button id="backBtn">👈</button>
+            <div>
+                <h2 id="color-text"></h2>
+                <div id="color-box"></div>
+            </div>
+            <button id="nextBtn">👉</button>
+        </header>
+
+
+        <fieldset id="color-selection">
+                <legend>COLOR TYPES</legend>
+                <label for="primary-color">Primary Colors</label> 
+                <input type="radio" id="primary-color" value="primary" name="colorSelection" checked>
+                <input type="radio" id="secondary-color" value="secondary" name="colorSelection">
+                <label for="secondary-color">Secondary Colors</label> 
+        </fieldset>
     </div>
 </body>
 </html>

@@ -93,17 +93,19 @@ const primaryColor = document.querySelector("#primary-color")
 const secondaryColor = document.querySelector("#secondary-color")
 
 // EMPTY THE CURRENT COLOR THEN FILL WITH THE SELECT COLORS OPON CLICK
-secondaryColor.addEventListener("click", ()=>{
+secondaryColor.addEventListener("change", ()=>{
     colorArray = [];
     colorArray = secondaryArray;
+    count = 0;
     clearArtBoard()
     displayColor()
     displayArtBoard() 
 })
 
-primaryColor.addEventListener("click", ()=>{
+primaryColor.addEventListener("change", ()=>{
     colorArray = [];
     colorArray = primaryArray;
+    count = 0;
     clearArtBoard()
     displayColor()   
     displayArtBoard()  

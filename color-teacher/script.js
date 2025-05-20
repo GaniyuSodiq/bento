@@ -40,7 +40,7 @@ const menuArtBoard = document.querySelector("#art-board")
 const menuGoodJob = document.querySelector("#main-h4")
 const artBoardCols = document.querySelectorAll("div.col")
 const mainCover = document.querySelector("#main-cover")
-menuArtBoard.classList.add("art-board")
+
 
 
 // FUNCTION TO DISPLAY COLOR ON THE HEADER
@@ -56,6 +56,7 @@ function displayColor() {
 function displayArtBoard() {
     setTimeout(()=>{
         menuH3.textContent = `Now paint the box below with the color ${colorArray[count].name}`
+        menuArtBoard.classList.add("art-board")
             artBoardCols.forEach((artBoardCol) => {
                 artBoardCol.addEventListener("pointerover", () => {
                     artBoardCol.style.backgroundColor = colorArray[count].code
@@ -78,6 +79,7 @@ function clearArtBoard() {
     hoveredBox = 0    
     menuGoodJob.textContent = ""
     menuH3.textContent = ""
+    menuArtBoard.classList.remove("art-board")
 }
 
 // FUNCTION TO ADD OR REMOVE MAIN COVER after 5 seconds

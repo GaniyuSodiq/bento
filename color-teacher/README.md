@@ -17,3 +17,5 @@ MORE FEATURES I GOT ALONG THE LINE
 - Improve the interface to a better one
 - Add both primary and seconday color 
 - Teach, Test and grade(score) based on perfomance in the test. Recommend to retake test or lesson
+- - test can be: Ask 'What color is this (Showing a red box)? 
+- - give 2 button options saying red | blue 

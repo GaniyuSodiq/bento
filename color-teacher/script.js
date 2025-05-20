@@ -44,6 +44,7 @@ const mainCover = document.querySelector("#main-cover")
 
 // FUNCTION TO DISPLAY COLOR ON THE HEADER
 function displayColor() {
+    console.log(count)
     colorText.textContent = `This is color ${colorArray[count].name}`
     headerContainer.appendChild(colorText)
     colorBox.style.backgroundColor = colorArray[count].code
@@ -53,6 +54,7 @@ function displayColor() {
 // FUNCTION TO DISPLAY COLOR ON THE ARTBOARD
 function displayArtBoard() {
     setTimeout(()=>{
+        console.log(count)
         menuH3.textContent = `Now paint the box below with the color ${colorArray[count].name}`
             artBoardCols.forEach((artBoardCol) => {
                 artBoardCol.addEventListener("pointerover", () => {
@@ -87,13 +89,14 @@ function clearArtBoard() {
 
 // CHANGE THE COLOR WITH BUTTONS BY CLEARING THE BOARD AND RERUN THE DISPLAYS 
 nextBtn.addEventListener("click", () => {
-    if (count < colorArray.length){
-        count ++
+    count ++
+    if (count >= colorArray.length){
+        menuH3.textContent = "YOU HAVE FINISHED THIS COLOR SECTION"
+        count --;        
+    } else{
         clearArtBoard()
         displayColor()
         displayArtBoard() 
-    } else{
-        menuH3.textContent = "YOU HAVE FINISHED THIS COLOR SECTION"
     }
 })
 

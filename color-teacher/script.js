@@ -52,8 +52,9 @@ function displayColor() {
 
 // FUNCTION TO DISPLAY COLOR ON THE ARTBOARD
 function displayArtBoard() {
-    menuH3.textContent = `Now paint the box below with the color ${colorArray[count].name}`
-    artBoardCols.forEach((artBoardCol) => {
+    setTimeout(()=>{
+            menuH3.textContent = `Now paint the box below with the color ${colorArray[count].name}`
+        artBoardCols.forEach((artBoardCol) => {
         artBoardCol.addEventListener("pointerover", () => {
             artBoardCol.style.backgroundColor = colorArray[count].code
             hoveredBox++;
@@ -64,6 +65,7 @@ function displayArtBoard() {
             }
         }) 
     })
+    }, 5000)
 }
 
 // FUNCTION TO CLEAR THE BOARD FOR NEXT COLOR DISPLAY
@@ -76,11 +78,11 @@ function clearArtBoard() {
 }
 
 // FUNCTION TO ADD OR REMOVE MAIN COVER after 5 seconds
-function mainCoverToggle() {
-    setTimeout(()=>{
-        mainSection.classList.toggle(".highZindex")
-    }, 5000)
-}
+// function mainCoverToggle() {
+//     setTimeout(()=>{
+//         mainSection.classList.toggle(".highZindex")
+//     }, 5000)
+// }
 
 // CHANGE THE COLOR WITH BUTTONS BY CLEARING THE BOARD AND RERUN THE DISPLAYS 
 nextBtn.addEventListener("click", () => {

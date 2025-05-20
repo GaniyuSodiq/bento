@@ -1,5 +1,5 @@
 // the colors and their respective details in an array of objects
-const colorArray = [
+let colorArray = [
     {
         name : "RED",
         code : "RED",
@@ -18,6 +18,53 @@ const colorArray = [
     {
         name : "BLUE",
         code : "BLUE",
+        audio : null,
+    },
+]
+
+let primaryArray = [
+    {
+        name : "RED",
+        code : "RED",
+        audio : null,
+    },
+    {
+        name : "GREEN",
+        code : "GREEN",
+        audio : null,
+    },
+    {
+        name : "YELLOW",
+        code : "YELLOW",
+        audio : null,
+    },
+    {
+        name : "BLUE",
+        code : "BLUE",
+        audio : null,
+    },
+]
+
+// CREATED THE SECONDARY COLORS
+let secondaryArray = [
+    {
+        name : "PURPLE",
+        code : "PURPLE",
+        audio : null,
+    },
+    {
+        name : "ORANGE",
+        code : "ORANGE",
+        audio : null,
+    },
+    {
+        name : "VIOLET",
+        code : "VIOLET",
+        audio : null,
+    },
+    {
+        name : "GOLD",
+        code : "GOLD",
         audio : null,
     },
 ]
@@ -41,7 +88,26 @@ const menuGoodJob = document.querySelector("#main-h4")
 let artBoardCols = document.querySelectorAll("div.col")
 const mainCover = document.querySelector("#main-cover")
 
+// PICK THE BUTTONS ON COLOR TYPES
+const primaryColor = document.querySelector("#primary-color")
+const secondaryColor = document.querySelector("#secondary-color")
 
+// EMPTY THE CURRENT COLOR THEN FILL WITH THE SELECT COLORS OPON CLICK
+secondaryColor.addEventListener("click", ()=>{
+    colorArray = [];
+    colorArray = secondaryArray;
+    clearArtBoard()
+    displayColor()
+    displayArtBoard() 
+})
+
+primaryColor.addEventListener("click", ()=>{
+    colorArray = [];
+    colorArray = primaryArray;
+    clearArtBoard()
+    displayColor()   
+    displayArtBoard()  
+})
 
 // FUNCTION TO DISPLAY COLOR ON THE HEADER
 function displayColor() {

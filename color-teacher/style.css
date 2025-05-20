@@ -17,6 +17,18 @@
     display: grid;
 }
 
+fieldset {
+    border: 1px solid rgba(128, 128, 128, 0.354);
+    font-size: .7rem;
+    display: flex;
+    padding: 5px;
+    justify-content:center;
+    gap: 3px;
+    margin-bottom: 10px;
+}
+
+
+
 header + main {
     grid-area: 2 / 1;
 }

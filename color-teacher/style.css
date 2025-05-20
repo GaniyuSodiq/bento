@@ -86,12 +86,9 @@ main{
     cursor:pointer;
 }
 
-#next-back {
-    margin-top: 3px;
-    text-align: center;
-}
 
-#next-back button{
+header > button{
     padding: 10px;
     font-size: 1rem;
+    align-self: stretch;
 }

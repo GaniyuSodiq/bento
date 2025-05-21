@@ -46,7 +46,7 @@ fieldset {
 }
 
 header{
-    height: 30vh;
+    height: 33vh;
     text-align: center;
     padding: 20px;
     border-radius: 5px;
@@ -112,4 +112,21 @@ header > button:hover {
     gap: 5px;
     justify-content: center;
     margin: 1px auto;
+}
+
+#answer-box button{
+    padding: 5px;
+}
+
+hr{
+    opacity: .3;
+    width: 80%;
+    text-align: center;
+}
+
+footer{
+    display: grid;
+    justify-items: center;
+    gap: 5px;
+    padding-bottom: 5px;
 }

@@ -158,6 +158,26 @@ function clearArtBoard() {
 //     }, 5000)
 // }
 
+
+// WRONG ANSWER FUNCTION - maybe there is a simpler solution. This is whats on my mind rn.
+
+function wrongAnswer() {
+    wrongIndex = []
+    colorArray.forEach((color, index) => {
+        if (index !== count) {
+            wrongIndex.push(index)
+            console.log(wrongIndex)
+        }
+    }) 
+    // return wrongIndex
+//  pick a randomnumber in this wrongIndex to assign "WRONG"
+    return colorArray[wrongIndex[Math.floor(Math.random() * wrongIndex.length)]].name
+}
+
+console.log(wrongAnswer())
+// console.log(wrongAnswer())
+// console.log(wrongAnswer())
+
 // JUST NEXT AUTOMATICALLY
 
 function nextColor() {

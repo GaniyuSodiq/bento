@@ -81,10 +81,18 @@ because i want the app to say out the options
 
 this is what came to my head right now:
 
-wrongOptions = arrayColor.filter(color => {color.name !== arrayColor[count].name})
-pick a randomnumber in this wrongOptions to assign "WRONG"
-WRONG = Math.Floor(Math.Random()*wrongOptions.length)
+<!-- wrongIndex = arrayColor.filter(color => {color.index !== arrayColor[count].index}) -->
+wrongIndex = []
+arrayColor.forEach((color) => {
+    if (color.index !== arrayColor[count].index){
+        wrongIndex.push(color.index)
+    }
+}) 
+pick a randomnumber in this wrongIndex to assign "WRONG"
+WRONG = arrayColor[Math.Floor(Math.Random()*wrongIndex.length)]
 
+
+HMMM THE ABOVE STEPS FEEL CRAZY LOL. BUT I WILL EXECUTE THEM... OTHER IDEAS CAN COME LATER - I KNW THEY WILL 😇
 SOME OTHER IDEAS ARE COMING TO MY MIND RIGHT NOW ABOUT HOW TO SOLVE THIS TEST SECTION
 ---
 

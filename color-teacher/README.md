@@ -19,3 +19,14 @@ MORE FEATURES I GOT ALONG THE LINE
 - Teach, Test and grade(score) based on perfomance in the test. Recommend to retake test or lesson
 - - test can be: Ask 'What color is this (Showing a red box)? 
 - - give 2 button options saying red | blue 
+
+HOW I PLAN THE OPTION BUTTONS TO WORK
+if wrong option clicked
+No! The color is red.
+Try again - rerun the random color selection
+
+
+if right option is clicked
+Yes! The color is red.
+Now paint the box below with red
+- display the artboard 

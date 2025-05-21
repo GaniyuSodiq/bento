@@ -88,6 +88,10 @@ const menuGoodJob = document.querySelector("#main-h4")
 let artBoardCols = document.querySelectorAll("div.col")
 const mainCover = document.querySelector("#main-cover")
 
+//answer option
+const option1 = document.querySelector("#option1")
+const option2 = document.querySelector("#option2")
+
 // PICK THE BUTTONS ON COLOR TYPES
 const primaryColor = document.querySelector("#primary-color")
 const secondaryColor = document.querySelector("#secondary-color")

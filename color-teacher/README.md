@@ -20,6 +20,18 @@ MORE FEATURES I GOT ALONG THE LINE
 - - test can be: Ask 'What color is this (Showing a red box)? 
 - - give 2 button options saying red | blue 
 
+
+I THINK THE MAIN WORK IN THIS TEST AND OPTIONS SECTION IS 
+HOW TO BRING THE RIGHT AND WRONG OPTIONS TO EXISTENCE - Lets do it!
+if array[0] is the color
+oneA option is given array[0]
+oneB option is givent array[a number picked at random between 0 and arraylenght, if it is array[0] then repick another number till ect]
+
+oneA option is given to one of the two buttons at random
+
+- - lets convert the ideas above to code and see how it goes --- Lets go!
+
+
 HOW I PLAN THE OPTION BUTTONS TO WORK
 if wrong option clicked
 No! The color is red.

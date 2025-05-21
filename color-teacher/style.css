@@ -29,7 +29,6 @@ fieldset {
     /* padding: 5px; */
     justify-content:center;
     gap: 3px;
-    margin-bottom: 10px;
 }
 
 
@@ -42,12 +41,12 @@ fieldset {
 
 #lower-section{
     background-color: white;
-    border-radius: 15px 15px 5px 5px;
+    border-radius: 15px 15px 10px 10px;
     box-shadow: 0px -2px 15px 3px rgba(11, 0, 29, 0.148);
 }
 
 header{
-    height: 35vh;
+    height: 30vh;
     text-align: center;
     padding: 20px;
     border-radius: 5px;
@@ -55,8 +54,6 @@ header{
     grid-template-columns: 50px 1fr 50px;
     align-items: center;
 }
-
-
 
 #color-box{
     height: 70px;
@@ -103,8 +100,16 @@ header > button{
     align-self: stretch;
     background: none;
     border: none;
+    font-size: 1.5rem;
 }
 
 header > button:hover {
     background-color: aliceblue;
+}
+
+#answer-box{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin: 1px auto;
 }

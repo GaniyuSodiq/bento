@@ -130,7 +130,7 @@ function displayArtBoard() {
                 hoveredBox++;
                 // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
                 if (hoveredBox === 40) {
-                    menuGoodJob.textContent = "GOOD JOB 👍"
+                    menuGoodJob.textContent = "👍🏽GOOD JOB👍🏽"
                     // nextColor()
                 }
             })

@@ -118,9 +118,7 @@ primaryColor.addEventListener("change", () => {
 // FUNCTION TO DISPLAY COLOR ON THE HEADER
 function displayColor() {
     colorText.textContent = `What color is this?`
-    // headerContainer.appendChild(colorText)
     colorBox.style.backgroundColor = colorArray[count].code
-    // headerContainer.appendChild(colorBox)
 }
 
 // FUNCTION TO DISPLAY COLOR ON THE ARTBOARD

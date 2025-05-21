@@ -31,6 +31,62 @@ oneA option is given to one of the two buttons at random
 
 - - lets convert the ideas above to code and see how it goes --- Lets go!
 
+- ON A GRANULAR LEVEL
+
+make 2 variables 
+
+const a
+const b
+
+make randomcalc that spits a or b
+which ever it spits gets to have the arrayColor
+    if randomcalc === a{
+        const a = arrayColor
+        const b = "WRONG"
+    } else {
+        const a = "WRONG"
+        const b = arrayColor        
+    }
+
+btnOption1.Onclick({
+    if option a === arrayColor {
+        your are cprrect. t is color arayColor.name
+        now paint the box below
+        good job
+        press right finger for the next question
+    } else if option a === "WRONG" {
+        No! The color is red.
+        play the color song (ie teach the color briefly)
+        Try again - rerun the random color selection
+    }
+})
+
+btnOption2.Onclick({
+    if option b === arrayColor {
+        your are cprrect. t is color arayColor.name
+        now paint the box below
+        good job
+        press right finger for the next question
+    } else if option b === "WRONG" {
+        No! The color is red.
+        play the color song (ie teach the color briefly)
+        Try again - rerun the random color selection
+    }
+})
+
+I NEED A RANDOM WRONG ANSWER TOO FOR THE "WRONG" VARIABLE
+because i want the app to say out the options 
+- - Ask 'What color is this (Showing a red box)? 
+- - give 2 button options saying red OR blue 
+
+this is what came to my head right now:
+
+wrongOptions = arrayColor.filter(color => {color.name !== arrayColor[count].name})
+pick a randomnumber in this wrongOptions to assign "WRONG"
+WRONG = Math.Floor(Math.Random()*wrongOptions.length)
+
+SOME OTHER IDEAS ARE COMING TO MY MIND RIGHT NOW ABOUT HOW TO SOLVE THIS TEST SECTION
+---
 
 HOW I PLAN THE OPTION BUTTONS TO WORK
 if wrong option clicked

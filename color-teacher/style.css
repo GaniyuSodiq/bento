@@ -18,7 +18,7 @@
 }
 
 fieldset {
-    border: 1px solid rgba(128, 128, 128, 0.354);
+    border: none;
     font-size: .7rem;
     display: flex;
     padding: 5px;
@@ -35,10 +35,12 @@ fieldset {
     }
 }
 
+#lower-section{
+    background-color: rgba(10, 243, 10, 0.146);
+}
 
 header{
     height: 35vh;
-    background-color: rgba(10, 243, 10, 0.146);
     text-align: center;
     padding: 20px;
     border-radius: 5px;
@@ -46,6 +48,7 @@ header{
     grid-template-columns: 50px 1fr 50px;
     align-items: center;
 }
+
 
 
 #color-box{
@@ -91,4 +94,10 @@ header > button{
     padding: 10px;
     font-size: 1rem;
     align-self: stretch;
+    background: none;
+    border: none;
+}
+
+header > button:hover {
+    background-color: aliceblue;
 }

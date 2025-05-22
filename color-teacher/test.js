@@ -159,22 +159,29 @@ function clearArtBoard() {
 // }
 
 
-// WRONG ANSWER FUNCTION - maybe there is a simpler solution. This is whats on my mind rn.
+// RIGHT AND WRONG ANSWER FUNCTION - maybe there is a simpler solution. This is whats on my mind rn.
 
-function wrongAnswer() {
+let rightAnswer = []
+let wrongAnswer = []
+
+
+function rightWrongAnswer() {
+
+    // WRONG ANSWER LOGIC
     wrongIndex = []
     colorArray.forEach((color, index) => {
         if (index !== count) {
             wrongIndex.push(index)
-            console.log(wrongIndex)
         }
     }) 
-    // return wrongIndex
-//  pick a randomnumber in this wrongIndex to assign "WRONG"
-    return colorArray[wrongIndex[Math.floor(Math.random() * wrongIndex.length)]].name
+    //  pick a randomnumber in this wrongIndex to assign "WRONG"
+    return wrongAnswer = colorArray[wrongIndex[Math.floor(Math.random() * wrongIndex.length)]]
+
+    // RIGHT ANSWER LOGIC
+
 }
 
-console.log(wrongAnswer())
+console.log(rightWrongAnswer().name)
 // console.log(wrongAnswer())
 // console.log(wrongAnswer())
 

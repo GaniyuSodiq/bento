@@ -167,7 +167,6 @@ let secondAnswer = {}
 
 // get right or wrong answer
 function firstSecondAnswer() {
-
     let wrongIndex = []
     colorArray.forEach((color, index) => {
         if (index !== count) {

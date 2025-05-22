@@ -108,3 +108,7 @@ Now paint the box below with red
 - display the artboard 
 
 // TESTED THE TEST ALGORITHM ABOVE AND IT WORKS! - GRETA JOB!
+
+
+NEXT FEATURE NOW IS AUDIO - I NEED TO ADD AUDION TO MOST PARTS IN EACH FUNCTION
+kids find audio easier than reading and they love song audios

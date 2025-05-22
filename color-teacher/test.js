@@ -6,11 +6,6 @@ let colorArray = [
         audio: null,
     },
     {
-        name: "GREEN",
-        code: "GREEN",
-        audio: null,
-    },
-    {
         name: "YELLOW",
         code: "YELLOW",
         audio: null,
@@ -26,11 +21,6 @@ let primaryArray = [
     {
         name: "RED",
         code: "RED",
-        audio: null,
-    },
-    {
-        name: "GREEN",
-        code: "GREEN",
         audio: null,
     },
     {
@@ -56,15 +46,10 @@ let secondaryArray = [
         name: "ORANGE",
         code: "ORANGE",
         audio: null,
-    },
+    },   
     {
-        name: "VIOLET",
-        code: "VIOLET",
-        audio: null,
-    },
-    {
-        name: "GOLD",
-        code: "GOLD",
+        name: "GREEN",
+        code: "GREEN",
         audio: null,
     },
 ]

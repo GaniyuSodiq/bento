@@ -104,6 +104,7 @@ secondaryColor.addEventListener("change", () => {
     clearArtBoard()
     displayColor()
     // displayArtBoard()
+    firstSecondAnswer()
 })
 
 primaryColor.addEventListener("change", () => {
@@ -113,6 +114,7 @@ primaryColor.addEventListener("change", () => {
     clearArtBoard()
     displayColor()
     // displayArtBoard()
+    firstSecondAnswer()
 })
 
 // FUNCTION TO DISPLAY COLOR ON THE HEADER
@@ -185,7 +187,6 @@ function firstSecondAnswer() {
     option1.textContent = firstAnswer.name 
     option2.textContent = secondAnswer.name    
 }
-firstSecondAnswer()
 
 console.log(firstAnswer)
 console.log(secondAnswer)
@@ -194,18 +195,8 @@ console.log(secondAnswer)
 
 // ONCLICK EVENTS ON THE TEST ASNWER OPTION BUTTONS
 option1.addEventListener("click", () => {
-    // if option a === arrayColor {
-    //     your are cprrect. t is color arayColor.name
-    //     now paint the box below
-    //     good job
-    //     press right finger for the next question
-    // } else if option a === "WRONG" {
-    //     No! The color is red.
-    //     play the color song (ie teach the color briefly)
-    //     Try again - rerun the random color selection
-    // }
     if (firstAnswer.name === colorArray[count].name) {
-        menuH3.textContent = `You are correct! It is color ${colorArray[count].name}. Paint the box below with the color ${colorArray[count].name}.`
+        menuH3.textContent = `You are correct! GOOD JOB!👍🏽 It is color ${colorArray[count].name}. Paint the box below with the color ${colorArray[count].name}.`
         menuArtBoard.classList.add("art-board")
         artBoardCols.forEach((artBoardCol) => {
             artBoardCol.addEventListener("pointerover", () => {
@@ -213,12 +204,34 @@ option1.addEventListener("click", () => {
                 hoveredBox++;
                 // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
                 if (hoveredBox === 40) {
-                    menuGoodJob.textContent = "GOOD JOB!👍🏽 Press the right finger 👉🏽 for the next question"
+                    menuGoodJob.textContent = "Press the right finger 👉🏽 for the next question"
                 }
             })
         })
     }
     if (firstAnswer.name !== colorArray[count].name) {
+        menuH3.textContent = `No! It is color ${colorArray[count].name}. Paint the box below with the color ${colorArray[count].name}.`
+        menuGoodJob.textContent = "😞 You need to do better. Press the right finger 👉🏽 for the next question"
+
+    }  
+})
+
+option2.addEventListener("click", () => {
+    if (secondAnswer.name === colorArray[count].name) {
+        menuH3.textContent = `You are correct! GOOD JOB!👍🏽 It is color ${colorArray[count].name}. Paint the box below with the color ${colorArray[count].name}.`
+        menuArtBoard.classList.add("art-board")
+        artBoardCols.forEach((artBoardCol) => {
+            artBoardCol.addEventListener("pointerover", () => {
+                artBoardCol.style.backgroundColor = colorArray[count].code
+                hoveredBox++;
+                // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
+                if (hoveredBox === 40) {
+                    menuGoodJob.textContent = "Press the right finger 👉🏽 for the next question"
+                }
+            })
+        })
+    }
+    if (secondAnswer.name !== colorArray[count].name) {
         menuH3.textContent = `No! It is color ${colorArray[count].name}. Paint the box below with the color ${colorArray[count].name}.`
         menuGoodJob.textContent = "😞 You need to do better. Press the right finger 👉🏽 for the next question"
 
@@ -238,6 +251,7 @@ function nextColor() {
         clearArtBoard()
         displayColor()
         // displayArtBoard()
+        firstSecondAnswer()
     }
 }
 
@@ -251,6 +265,7 @@ nextBtn.addEventListener("click", () => {
         clearArtBoard()
         displayColor()
         // displayArtBoard()
+        firstSecondAnswer()
     }
 })
 
@@ -263,12 +278,14 @@ backBtn.addEventListener("click", () => {
         clearArtBoard()
         displayColor()
         // displayArtBoard()
+        firstSecondAnswer()
     }
 })
 
 displayColor()
 // displayArtBoard()
 // mainCoverToggle()
+firstSecondAnswer()
 
 // DIDNT WORK BCS YOU CAN ONLY SELECT MULTIPLE ELEMENT TOGETHER USING document.querySelectorAll()
 // BE IT A CLASS OR ID

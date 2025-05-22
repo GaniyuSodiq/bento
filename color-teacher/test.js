@@ -88,7 +88,7 @@ const menuGoodJob = document.querySelector("#main-h4")
 let artBoardCols = document.querySelectorAll("div.col")
 const mainCover = document.querySelector("#main-cover")
 
-//answer option
+//answer options
 const option1 = document.querySelector("#option1")
 const option2 = document.querySelector("#option2")
 
@@ -160,16 +160,13 @@ function clearArtBoard() {
 
 
 // RIGHT AND WRONG ANSWER FUNCTION - maybe there is a simpler solution. This is whats on my mind rn.
-
 let firstAnswer = {}
 let secondAnswer = {}
-
-
 
 // get right or wrong answer
 function firstSecondAnswer() {
 
-    wrongIndex = []
+    let wrongIndex = []
     colorArray.forEach((color, index) => {
         if (index !== count) {
             wrongIndex.push(index)
@@ -192,8 +189,43 @@ console.log(secondAnswer)
 // console.log(wrongAnswer())
 // console.log(wrongAnswer())
 
-// JUST NEXT AUTOMATICALLY
+// ONCLICK EVENTS ON THE TEST ASNWER OPTION BUTTONS
+option1.addEventListener("click", () => {
+    // if option a === arrayColor {
+    //     your are cprrect. t is color arayColor.name
+    //     now paint the box below
+    //     good job
+    //     press right finger for the next question
+    // } else if option a === "WRONG" {
+    //     No! The color is red.
+    //     play the color song (ie teach the color briefly)
+    //     Try again - rerun the random color selection
+    // }
+    if (firstAnswer.name === colorArray[count].name) {
+        menuH3.textContent = `You are correct! It is color ${colorArray[count].name}. Paint the box below with the color ${colorArray[count].name}.`
+        menuArtBoard.classList.add("art-board")
+        artBoardCols.forEach((artBoardCol) => {
+            artBoardCol.addEventListener("pointerover", () => {
+                artBoardCol.style.backgroundColor = colorArray[count].code
+                hoveredBox++;
+                // DISPLAY GOOD JOB WHEN HOVERED BOXES = 40
+                if (hoveredBox === 40) {
+                    menuGoodJob.textContent = "GOOD JOB!👍🏽 Press the right finger 👉🏽 for the next question"
+                }
+            })
+        })
+    }
+    if (firstAnswer.name !== colorArray[count].name) {
+        menuH3.textContent = `No! It is color ${colorArray[count].name}. Paint the box below with the color ${colorArray[count].name}.`
+        menuGoodJob.textContent = "😞 You need to do better. Press the right finger 👉🏽 for the next question"
 
+    }  
+})
+
+
+
+
+// JUST NEXT AUTOMATICALLY
 function nextColor() {
     count++
     if (count >= colorArray.length) {

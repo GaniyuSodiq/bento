@@ -210,8 +210,8 @@ option1.addEventListener("click", () => {
         })
     }
     if (firstAnswer.name !== colorArray[count].name) {
-        menuH3.textContent = `No! It is color ${colorArray[count].name}. Paint the box below with the color ${colorArray[count].name}.`
-        menuGoodJob.textContent = "😞 You need to do better. Press the right finger 👉🏽 for the next question"
+        menuH3.textContent = `No! It is color ${colorArray[count].name}. 😞 You need to do better.`
+        menuGoodJob.textContent = "Press the right finger 👉🏽 for the next question"
 
     }  
 })
@@ -232,8 +232,8 @@ option2.addEventListener("click", () => {
         })
     }
     if (secondAnswer.name !== colorArray[count].name) {
-        menuH3.textContent = `No! It is color ${colorArray[count].name}. Paint the box below with the color ${colorArray[count].name}.`
-        menuGoodJob.textContent = "😞 You need to do better. Press the right finger 👉🏽 for the next question"
+        menuH3.textContent = `No! It is color ${colorArray[count].name}. 😞 You need to do better.`
+        menuGoodJob.textContent = "Press the right finger 👉🏽 for the next question"
 
     }  
 })

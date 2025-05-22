@@ -106,3 +106,5 @@ if right option is clicked
 Yes! The color is red.
 Now paint the box below with red
 - display the artboard 
+
+// TESTED THE TEST ALGORITHM ABOVE AND IT WORKS! - GRETA JOB!

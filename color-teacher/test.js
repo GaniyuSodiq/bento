@@ -181,6 +181,9 @@ function firstSecondAnswer() {
         firstAnswer = colorArray[wrongIndex[Math.floor(Math.random() * wrongIndex.length)]]
         secondAnswer = colorArray[count]
     }
+
+    option1.textContent = firstAnswer.name 
+    option2.textContent = secondAnswer.name    
 }
 firstSecondAnswer()
 

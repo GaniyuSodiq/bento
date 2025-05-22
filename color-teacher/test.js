@@ -161,27 +161,34 @@ function clearArtBoard() {
 
 // RIGHT AND WRONG ANSWER FUNCTION - maybe there is a simpler solution. This is whats on my mind rn.
 
-let rightAnswer = []
-let wrongAnswer = []
+let firstAnswer = {}
+let secondAnswer = {}
 
 
-function rightWrongAnswer() {
 
-    // WRONG ANSWER LOGIC
+// get right or wrong answer
+function firstSecondAnswer() {
+
     wrongIndex = []
     colorArray.forEach((color, index) => {
         if (index !== count) {
             wrongIndex.push(index)
         }
-    }) 
-    //  pick a randomnumber in this wrongIndex to assign "WRONG"
-    return wrongAnswer = colorArray[wrongIndex[Math.floor(Math.random() * wrongIndex.length)]]
+    })
 
-    // RIGHT ANSWER LOGIC
-
+    let randomRW = Math.floor(Math.random() * 2) + 1;
+    if (randomRW === 1) {
+        firstAnswer = colorArray[count]
+        secondAnswer = colorArray[wrongIndex[Math.floor(Math.random() * wrongIndex.length)]]
+    } else {
+        firstAnswer = colorArray[wrongIndex[Math.floor(Math.random() * wrongIndex.length)]]
+        secondAnswer = colorArray[count]
+    }
 }
+firstSecondAnswer()
 
-console.log(rightWrongAnswer().name)
+console.log(firstAnswer)
+console.log(secondAnswer)
 // console.log(wrongAnswer())
 // console.log(wrongAnswer())
 

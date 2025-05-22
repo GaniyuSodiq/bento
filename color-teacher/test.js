@@ -103,7 +103,7 @@ secondaryColor.addEventListener("change", () => {
     count = 0;
     clearArtBoard()
     displayColor()
-    displayArtBoard()
+    // displayArtBoard()
 })
 
 primaryColor.addEventListener("change", () => {
@@ -112,7 +112,7 @@ primaryColor.addEventListener("change", () => {
     count = 0;
     clearArtBoard()
     displayColor()
-    displayArtBoard()
+    // displayArtBoard()
 })
 
 // FUNCTION TO DISPLAY COLOR ON THE HEADER
@@ -237,7 +237,7 @@ function nextColor() {
     } else {
         clearArtBoard()
         displayColor()
-        displayArtBoard()
+        // displayArtBoard()
     }
 }
 
@@ -250,7 +250,7 @@ nextBtn.addEventListener("click", () => {
     } else {
         clearArtBoard()
         displayColor()
-        displayArtBoard()
+        // displayArtBoard()
     }
 })
 
@@ -262,12 +262,12 @@ backBtn.addEventListener("click", () => {
     } else {
         clearArtBoard()
         displayColor()
-        displayArtBoard()
+        // displayArtBoard()
     }
 })
 
 displayColor()
-displayArtBoard()
+// displayArtBoard()
 // mainCoverToggle()
 
 // DIDNT WORK BCS YOU CAN ONLY SELECT MULTIPLE ELEMENT TOGETHER USING document.querySelectorAll()

@@ -3,17 +3,23 @@ let colorArray = [
     {
         name: "RED",
         code: "RED",
-        audio: null,
+        audioName: new Audio("audio/red.mp3"),
+        audioNo: new Audio("audio/no-red.mp3"),
+        audioIt: new Audio("audio/it-is-red.mp3"),       
     },
     {
         name: "YELLOW",
         code: "YELLOW",
-        audio: null,
+        audioName: new Audio("audio/yellow.mp3"),
+        audioNo: new Audio("audio/no-yellow.mp3"),
+        audioIt: new Audio("audio/it-is-yellow.mp3"),
     },
     {
         name: "BLUE",
         code: "BLUE",
-        audio: null,
+        audioName: new Audio("audio/blue.mp3"),
+        audioNo: new Audio("audio/no-blue.mp3"),
+        audioIt: new Audio("audio/it-is-blue.mp3"),
     },
 ]
 
@@ -21,17 +27,23 @@ let primaryArray = [
     {
         name: "RED",
         code: "RED",
-        audio: null,
+        audioName: new Audio("audio/red.mp3"),
+        audioNo: new Audio("audio/no-red.mp3"),
+        audioIt: new Audio("audio/it-is-red.mp3"),       
     },
     {
         name: "YELLOW",
         code: "YELLOW",
-        audio: null,
+        audioName: new Audio("audio/yellow.mp3"),
+        audioNo: new Audio("audio/no-yellow.mp3"),
+        audioIt: new Audio("audio/it-is-yellow.mp3"),
     },
     {
         name: "BLUE",
         code: "BLUE",
-        audio: null,
+        audioName: new Audio("audio/blue.mp3"),
+        audioNo: new Audio("audio/no-blue.mp3"),
+        audioIt: new Audio("audio/it-is-blue.mp3"),
     },
 ]
 
@@ -40,19 +52,30 @@ let secondaryArray = [
     {
         name: "PURPLE",
         code: "PURPLE",
-        audio: null,
+        audioName: new Audio("audio/purple.mp3"),
+        audioNo: new Audio("audio/no-purple.mp3"),
+        audioIt: new Audio("audio/it-is-purple.mp3"),
     },
     {
         name: "ORANGE",
         code: "ORANGE",
-        audio: null,
+        audioName: new Audio("audio/orange.mp3"),
+        audioNo: new Audio("audio/no-orange.mp3"),
+        audioIt: new Audio("audio/it-is-orange.mp3"),
     },   
     {
         name: "GREEN",
         code: "GREEN",
-        audio: null,
+        audioName: new Audio("audio/green.mp3"),
+        audioNo: new Audio("audio/no-green.mp3"),
+        audioIt: new Audio("audio/it-is-green.mp3"),
     },
 ]
+
+const orAudio = new Audio("audio/or.mp3")
+const correctAudio = new Audio("audio/you-are-correct.mp3")
+const whatAudio = new Audio("audio/what.mp3")
+
 let count = 0;
 let hoveredBox = 0;
 

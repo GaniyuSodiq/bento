@@ -9,33 +9,37 @@
     <script>
         // camelize string border-left-right to borderLeftRight
         function camelize(str){
-            const strArray = str.split("")
-            const dashIndex = []
-            const cleanStr = []
-            const camel = []
-            strArray.forEach((s, index) => {                
-                if (s === "-"){
-                    dashIndex.push(index)
-                } else {
-                    cleanStr.push(s)
-                }
-            });
-            const indexToCap = dashIndex.map((num, index) => num + index)
-            // dashIndex.forEach((num, index) => {
-            //     newDashIndex = []
-            //     newNum = num + index
-            //     newDashIndex.push(newNum)
+            // const strArray = str.split("")
+            // const dashIndex = []
+            // const cleanStr = []
+            // const camel = []
+            // strArray.forEach((s, index) => {                
+            //     if (s === "-"){
+            //         dashIndex.push(index)
+            //     } else {
+            //         cleanStr.push(s)
+            //     }
+            // });
+            // const indexToCap = dashIndex.map((num, index) => num + index)
+            // // dashIndex.forEach((num, index) => {
+            // //     newDashIndex = []
+            // //     newNum = num + index
+            // //     newDashIndex.push(newNum)
+            // // })
+            // cleanStr.forEach((s, index) => {
+            //     if (indexToCap.includes(index)){
+            //         s = "A"
+            //         camel.push(s)
+            //     } else {
+            //         camel.push(s)
+            //     }
             // })
-            cleanStr.forEach((s, index) => {
-                if (indexToCap.includes(index)){
-                    s = "A"
-                    camel.push(s)
-                } else {
-                    camel.push(s)
-                }
-            })
-            const strCamel = camel.join("")
-            return `dashIndex is: ${dashIndex} and newDashIndex is: ${indexToCap}| cameLize: ${strCamel}`
+            // const strCamel = camel.join("")
+            // return `dashIndex is: ${dashIndex} and newDashIndex is: ${indexToCap}| cameLize: ${strCamel}`
+            return str
+                .split("-")
+                .map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1))
+                .join("")
         }     
 
         console.log(camelize("border-left-right"))

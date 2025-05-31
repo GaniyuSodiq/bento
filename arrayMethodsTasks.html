@@ -61,6 +61,16 @@
         }
 
         console.log(`filterRangeInPlaceFn is ${filterRangeInPlace(arr2, 1, 4)} and arr2 is ${arr2}`)
+
+
+        // sort in decreasing order
+        let arr3 = [5, 2, 1, -10, 8]
+
+        function sortInDecreasingOrder(arr){
+            return arr.sort((a, b) => b - a )
+        }
+
+        console.log(sortInDecreasingOrder(arr3))
     </script>
 </body>
 </html>

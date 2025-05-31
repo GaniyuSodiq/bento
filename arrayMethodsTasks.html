@@ -40,9 +40,18 @@
                 .split("-")
                 .map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1))
                 .join("")
-        }     
-
+        }  
         console.log(camelize("border-left-right"))
+
+        // function that takes an array and filter out values >= a and <= b
+        const arr = [5, 3, 8, 1]
+        function filterRange(arr, a, b){
+            // const sortedArr = arr.sort((a, b) => a -b) NOT NECESSARY BCS WE AINT LOOK FOR ORDER
+            const filtered = sortedArr.filter(num => num >= a && num <= b)
+            return filtered;
+        }
+
+        console.log(`filterRangeFn is ${filterRange(arr, 1, 4)}`)
     </script>
 </body>
 </html>

@@ -52,6 +52,15 @@
         }
 
         console.log(`filterRangeFn is ${filterRange(arr, 1, 4)} and arr is ${arr}`)
+
+        // function that filter out values in a range
+
+        const arr2 = [5, 3, 8, 1]
+        function filterRangeInPlace(arr2, a, b){
+            return arr2.filter(num => a <= num && num <= b )
+        }
+
+        console.log(`filterRangeInPlaceFn is ${filterRangeInPlace(arr2, 1, 4)} and arr2 is ${arr2}`)
     </script>
 </body>
 </html>

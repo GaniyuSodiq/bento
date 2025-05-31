@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods Tasks</title>
+</head>
+<body>
+    <script>
+        // camelize string border-left-right to borderLeftRight
+        function camelize(str){
+            const strArray = str.split("")
+            const dashIndex = []
+            const cleanStr = []
+            const camel = []
+            strArray.forEach((s, index) => {                
+                if (s === "-"){
+                    dashIndex.push(index)
+                } else {
+                    cleanStr.push(s)
+                }
+            });
+            const indexToCap = dashIndex.map((num, index) => num + index)
+            // dashIndex.forEach((num, index) => {
+            //     newDashIndex = []
+            //     newNum = num + index
+            //     newDashIndex.push(newNum)
+            // })
+            cleanStr.forEach((s, index) => {
+                if (indexToCap.includes(index)){
+                    s = "A"
+                    camel.push(s)
+                } else {
+                    camel.push(s)
+                }
+            })
+            const strCamel = camel.join("")
+            return `dashIndex is: ${dashIndex} and newDashIndex is: ${indexToCap}| cameLize: ${strCamel}`
+        }     
+
+        console.log(camelize("border-left-right"))
+    </script>
+</body>
+</html>

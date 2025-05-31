@@ -47,11 +47,11 @@
         const arr = [5, 3, 8, 1]
         function filterRange(arr, a, b){
             // const sortedArr = arr.sort((a, b) => a -b) NOT NECESSARY BCS WE AINT LOOK FOR ORDER
-            const filtered = sortedArr.filter(num => num >= a && num <= b)
+            const filtered = arr.filter(num => num >= a && num <= b)
             return filtered;
         }
 
-        console.log(`filterRangeFn is ${filterRange(arr, 1, 4)}`)
+        console.log(`filterRangeFn is ${filterRange(arr, 1, 4)} and arr is ${arr}`)
     </script>
 </body>
 </html>

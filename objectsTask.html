@@ -53,11 +53,11 @@
         // If salaries is empty, then the result must be 0.
 
 
-        let salaries = {
-            John: 100,
-            Ann: 160,
-            Pete: 130
-        }
+        // let salaries = {
+        //     John: 100,
+        //     Ann: 160,
+        //     Pete: 130
+        // }
 
         // // let sum = salaries.Ann +
         // total = 0;
@@ -69,12 +69,45 @@
         //     return total
         // }
 
-        // console.log(sum())
-        sum = 0;
-        for (let sal in salaries) {
-            sum += salaries[sal]
+        // // console.log(sum())
+        // sum = 0;
+        // for (let sal in salaries) {
+        //     sum += salaries[sal]
+        // }
+        // console.log(sum)
+
+        //         Create a function multiplyNumeric(obj) that multiplies all numeric property values of obj by 2.
+
+        // For instance:
+
+        // before the call
+        let menu = {
+            width: 200,
+            height: 300,
+            title: "My menu"
+        };
+
+        function multiplyNumeric(obj) {
+            for (let key in obj) {
+                if (typeof obj[key] == "number") {
+                    obj[key] *= 2;
+                }
+            }
+            return obj
         }
-        console.log(sum)
+        // let neeMenu = menu.map(item => ({
+        //     width : item.width * 2, height : item.height * 2, title : item.title
+        // }))
+        console.log(multiplyNumeric(menu))
+
+
+        //   function multiplyNumeric(obj) {
+        //   for (let key in obj) {
+        //     if (typeof obj[key] == 'number') {
+        //       obj[key] *= 2;
+        //     }
+        //   }
+        // }
 
     </script>
 </body>

@@ -71,6 +71,17 @@
         }
 
         console.log(sortInDecreasingOrder(arr3))
+
+
+        // make a copy of array of string and sort it
+
+        let arrStrings = ["HTML", "JAVASCRIPT", "CSS"]
+        let sorted = copySorted()
+        function copySorted(arrStrings){
+            return arrStrings.sort((a, b) => a - b)
+        }
+
+        console.log(sorted)
     </script>
 </body>
 </html>

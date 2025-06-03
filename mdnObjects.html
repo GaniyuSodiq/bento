@@ -15,10 +15,10 @@
     <script>
         const person = {
             // name: ["Bob", "Smith"],
-            name : {
-                first : "Bob",
-                last : "Smith"
-            }
+            name: {
+                first: "Bob",
+                last: "Smith"
+            },
             age: 32,
             // bio : function(){
             //     console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old`)
@@ -32,8 +32,11 @@
             introduceSelf() {
                 console.log(`Hi! I amd ${this.name[0]}`)
             },
-
         }
+
+        person.age = 45;
+        person["name"]["last"] = "Cratchit";
+        
     </script>
 </body>
 

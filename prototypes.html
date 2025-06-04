@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototypes In JavaScript</title>
+</head>
+<body>
+    <script>
+        // EVERY OBJECT IN JS HAS AN INTERNAL PROPERTY CALLED [[Prototype]] 
+        // The double square brackets that enclose [[Prototype]] 
+        // signify that it is an internal property, and cannot be accessed directly in code.
+        let y = new Object()
+        let x = {}
+
+        Object.getPrototypeOf(y)
+        Object.getPrototypeOf(x)
+    </script>
+</body>
+</html>

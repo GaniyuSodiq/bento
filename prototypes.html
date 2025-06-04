@@ -10,11 +10,14 @@
         // EVERY OBJECT IN JS HAS AN INTERNAL PROPERTY CALLED [[Prototype]] 
         // The double square brackets that enclose [[Prototype]] 
         // signify that it is an internal property, and cannot be accessed directly in code.
-        let y = new Object()
+        let z = new Object()
         let x = {}
 
-        Object.getPrototypeOf(y)
-        console.log(Object.getPrototypeOf(x))
+        Object.getPrototypeOf(z)
+        console.log(Object.getPrototypeOf(x)) // a way to find the prototype
+
+        x.toString()
+        console.log(x.toString())
     </script>
 </body>
 </html>

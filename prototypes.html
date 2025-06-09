@@ -49,6 +49,23 @@
         // greet() METHOD IS AUTOMATICALLY AVAILBLE ON hero1
 
         console.log(hero1.greet())
+
+        // call() METHOD IS USE TO COPY THE PROPERTIES OF ONE CONSTRUCTOR INTO ANOTHER CONSTRUCTOR
+
+        // initialize the Warrior constructor
+        function Warrior(name, level, weapon){
+            //use call() method to connect/chain constructors
+            Hero.call(this, name, level)
+
+            // now we add new property yo the copied properties
+            this.weapon = weapon
+        }
+
+        // initialize the Healer constructor
+        function Healer(name, level, spell){
+            Hero.call(this, name, level)
+            this.spell = spell
+        }
     </script>
 </body>
 </html>

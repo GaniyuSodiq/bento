@@ -10,22 +10,29 @@
         // EVERY OBJECT IN JS HAS AN INTERNAL PROPERTY CALLED [[Prototype]] 
         // The double square brackets that enclose [[Prototype]] 
         // signify that it is an internal property, and cannot be accessed directly in code.
-        let z = new Object()
-        let x = {}
+        // let z = new Object()
+        // let x = {}
 
-        Object.getPrototypeOf(z)
-        console.log(Object.getPrototypeOf(x)) // a way to find the prototype
+        // Object.getPrototypeOf(z)
+        // console.log(Object.getPrototypeOf(x)) // a way to find the prototype
 
-        x.toString()
-        console.log(x.toString())
+        // x.toString()
+        // console.log(x.toString())
 
-        let y = []
-        // or let y = new Array()
+        // let y = []
+        // // or let y = new Array()
 
-        console.log(Object.getPrototypeOf(y))
+        // console.log(Object.getPrototypeOf(y))
 
-        console.log(Array.prototype.isPrototypeOf(y))
-        console.log(Object.prototype.isPrototypeOf(Array))
+        // console.log(Array.prototype.isPrototypeOf(y))
+        // console.log(Object.prototype.isPrototypeOf(Array))
+
+        // initialize a constructor function for new Hero
+
+        function Hero(name, level){
+            this.name = name
+            this.level = level
+        }
     </script>
 </body>
 </html>

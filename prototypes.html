@@ -66,6 +66,16 @@
             Hero.call(this, name, level)
             this.spell = spell
         }
+
+        // create attack() method for the Warrior
+        Warrior.prototype.attack = function (){
+            return `${this.name} attack with the ${this.weapon}`
+        }
+
+        // create heal() method for the Healer constructor
+        Healer.prototype.heal = function(){
+            return `${this.name} heal with the ${this.spell}`
+        }
     </script>
 </body>
 </html>

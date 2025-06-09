@@ -12,25 +12,24 @@
         // EVERY OBJECT IN JS HAS AN INTERNAL PROPERTY CALLED [[Prototype]] 
         // The double square brackets that enclose [[Prototype]] 
         // signify that it is an internal property, and cannot be accessed directly in code.
-        // let z = new Object()
-        // let x = {}
+        let z = new Object()
+        let x = {}
 
-        // Object.getPrototypeOf(z)
-        // console.log(Object.getPrototypeOf(x)) // a way to find the prototype
+        Object.getPrototypeOf(z)
+        console.log(Object.getPrototypeOf(x)) // a way to find the prototype
 
-        // x.toString()
-        // console.log(x.toString())
+        x.toString()
+        console.log(x.toString())
 
-        // let y = []
-        // // or let y = new Array()
+        let y = []
+        // or let y = new Array()
 
-        // console.log(Object.getPrototypeOf(y))
+        console.log(Object.getPrototypeOf(y))
 
-        // console.log(Array.prototype.isPrototypeOf(y))
-        // console.log(Object.prototype.isPrototypeOf(Array))
+        console.log(Array.prototype.isPrototypeOf(y))
+        console.log(Object.prototype.isPrototypeOf(Array))
 
-        // initialize a constructor function for new Hero
-
+        // initialize a constructor function for Hero
         function Hero(name, level) {
             this.name = name
             this.level = level
@@ -42,24 +41,22 @@
 
         console.log(Object.getPrototypeOf(hero1))
 
-        // add greet method to the hero prototype
+        // add greet method to the Hero constructor prototype
         Hero.prototype.greet = function () {
             return `${this.name} says hello`
         }
 
         // SINCE greet() METHOD IS IN THE PROTOTYPE OF Hero AND hero1 IS AN INSTANCE OF Hero
         // greet() METHOD IS AUTOMATICALLY AVAILBLE ON hero1
-
         console.log(hero1.greet())
 
         // call() METHOD IS USE TO COPY THE PROPERTIES OF ONE CONSTRUCTOR INTO ANOTHER CONSTRUCTOR
-
         // initialize the Warrior constructor
         function Warrior(name, level, weapon) {
-            //use call() method to connect/chain constructors
+            //use call() method to connect/chain/copy constructors
             Hero.call(this, name, level)
 
-            // now we add new property yo the copied properties
+            // now we add new property to the copied properties
             this.weapon = weapon
         }
 

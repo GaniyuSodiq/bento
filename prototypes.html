@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prototypes In JavaScript</title>
 </head>
+
 <body>
     <script>
         // EVERY OBJECT IN JS HAS AN INTERNAL PROPERTY CALLED [[Prototype]] 
@@ -29,7 +31,7 @@
 
         // initialize a constructor function for new Hero
 
-        function Hero(name, level){
+        function Hero(name, level) {
             this.name = name
             this.level = level
         }
@@ -53,7 +55,7 @@
         // call() METHOD IS USE TO COPY THE PROPERTIES OF ONE CONSTRUCTOR INTO ANOTHER CONSTRUCTOR
 
         // initialize the Warrior constructor
-        function Warrior(name, level, weapon){
+        function Warrior(name, level, weapon) {
             //use call() method to connect/chain constructors
             Hero.call(this, name, level)
 
@@ -62,20 +64,27 @@
         }
 
         // initialize the Healer constructor
-        function Healer(name, level, spell){
+        function Healer(name, level, spell) {
             Hero.call(this, name, level)
             this.spell = spell
         }
 
         // create attack() method for the Warrior
-        Warrior.prototype.attack = function (){
+        Warrior.prototype.attack = function () {
             return `${this.name} attack with the ${this.weapon}`
         }
 
         // create heal() method for the Healer constructor
-        Healer.prototype.heal = function(){
+        Healer.prototype.heal = function () {
             return `${this.name} heal with the ${this.spell}`
         }
+
+        hero1 = new Warrior("Bjorn", 1, "axe")
+        let hero2 = new Healer("Kanin", 1, "cure")
+
+        console.log(hero1.attack())
+        console.log(hero2.heal())
     </script>
 </body>
+
 </html>

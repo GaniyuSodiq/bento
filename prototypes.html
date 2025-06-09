@@ -39,6 +39,11 @@
         console.log(hero1)
 
         console.log(Object.getPrototypeOf(hero1))
+
+        // add greet method to the hero prototype
+        Hero.prototype.greet = function () {
+            return `${this.name} says hello`
+        }
     </script>
 </body>
 </html>

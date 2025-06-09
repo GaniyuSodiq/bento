@@ -44,6 +44,11 @@
         Hero.prototype.greet = function () {
             return `${this.name} says hello`
         }
+
+        // SINCE greet() METHOD IS IN THE PROTOTYPE OF Hero AND hero1 IS AN INSTANCE OF Hero
+        // greet() METHOD IS AUTOMATICALLY AVAILBLE ON hero1
+
+        console.log(hero1.greet())
     </script>
 </body>
 </html>

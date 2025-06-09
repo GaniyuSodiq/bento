@@ -69,6 +69,13 @@
             this.spell = spell
         }
 
+        // Object.setPropertyOf() is use to copy/link/connect prototype properties 
+        // call() is use to copy/link/connect direct properties
+        // Object.setPropertyOf() must follow where call is used 
+        // and the called constructor prototype ends the Object.setPropertyOf() method like below
+        Object.setPrototypeOf(Warrior.prototype, Hero.prototype)
+        Object.setPrototypeOf(Healer.prototype, Hero.prototype)
+
         // create attack() method for the Warrior
         Warrior.prototype.attack = function () {
             return `${this.name} attack with the ${this.weapon}`
@@ -88,7 +95,7 @@
         // calling the greet() method given to the Hero prototype leads to error
         // bcs call() metod doesnt bring the constructor prototype propertie(s) and method(s)
         console.log(hero1.greet()) // Uncaught TypeError: hero1.greet is not a function
-
+        console.log(hero2.greet())
     </script>
 </body>
 

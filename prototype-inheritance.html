@@ -35,9 +35,18 @@
             earLength : 10,
             __proto__ : rabbit
         }
-
+        // Now if we read something from longEar, and it’s missing, 
+        // JavaScript will look for it in rabbit, and then in animal.
         longEar.walk()
         console.log(longEar.jump)
+
+        rabbit.walk = function () {
+            console.log("Rabbit! Bounce bounce")
+        }
+
+        // Now rabbit doesnt need to use prototype to get walk(), it has its own walk()
+        rabbit.walk() // Rabbit! Bounce bounce
+
     </script>
 </body>
 </html>

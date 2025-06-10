@@ -20,6 +20,17 @@
         for (let key in rabbit){
             console.log(key)
         }
+
+        // use obj.hasOwnProperty(key) to isolate default and inherited keys
+
+        for (let key in rabbit){
+            let isOwn = rabbit.hasOwnProperty(key) // check if the key is a default key in rabbit{}
+            if (isOwn){
+                console.log(`${key} : is default key`)
+            } else {
+                console.log(`${key} : is inherited key`)
+            }
+        }
     </script>
 </body>
 </html>

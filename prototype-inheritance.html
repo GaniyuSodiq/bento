@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype-inheritance js info</title>
+</head>
+<body>
+    <script>
+        // [[Prototype]] is either null or references another object.
+        let animal = {
+            eat : true,
+        }
+
+        let rabbit = {
+            jump : true,
+        }
+
+        rabbit.__proto__ = animal // sets rabbit.[[Prototype]] = animal
+
+        // now we can find both properties in Rabbit
+        console.log(rabbit.eat)
+        console.log(rabbit.jump)
+    </script>
+</body>
+</html>

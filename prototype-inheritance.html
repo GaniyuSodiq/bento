@@ -10,13 +10,18 @@
         // [[Prototype]] is either null or references another object.
         let animal = {
             eat : true,
+            walk() {
+                console.log("Animal Walks")
+            } // this function(method) is also inherited by rabbit
         }
+
 
         let rabbit = {
             jump : true,
+            __proto__ : animal // __proto__ inheritance writen in another way
         }
 
-        rabbit.__proto__ = animal // sets rabbit.[[Prototype]] = animal
+        // rabbit.__proto__ = animal // sets rabbit.[[Prototype]] = animal
 
         // now we can find both properties in Rabbit
         console.log(rabbit.eat)

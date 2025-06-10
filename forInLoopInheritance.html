@@ -11,12 +11,15 @@
             eats : true
         }
         let rabbit = {
+            __proto__ : animal,
             jumps : true
         }
 
         console.log(Object.keys(rabbit)) // give only the default keeys in the object - not inherited keys
         
-        
+        for (let key in rabbit){
+            console.log(key)
+        }
     </script>
 </body>
 </html>

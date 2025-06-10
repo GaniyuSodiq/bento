@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Value of This</title>
 </head>
+
 <body>
     <script>
-        
+        let animal = {
+            walk() {
+                if (!this.isSleeping) {
+                    console.log("I walk")
+                }
+            },
+            sleep() {
+                this.isSleeping = true
+                console.log("I sleep")
+            }
+        }
+
+        let rabbit = {
+            __proto__: animal,
+            name: "White Rabbit"
+        }
+
+        // rabbit.walk()
+        rabbit.sleep() // set the isSleeping variable at the rabbit level only doesnt propagate to animal
+        // animal.sleep() // set the isSleeping variable at the animal level but rabbit inherit it
+
+        alert (rabbit.isSleeping) // true - bcs isSleeping is called at rabbit level
+        alert (animal.isSleeping) // undefined - bcs sleep is not called in animal therefore isSleeping is is not set
     </script>
 </body>
+
 </html>

@@ -28,6 +28,16 @@
         console.log(rabbit.jump)
 
         rabbit.walk() // walk is also taken from the prototype
+
+        // the prototype chain can be longer
+
+        let longEar = {
+            earLength : 10,
+            __proto__ : rabbit
+        }
+
+        longEar.walk()
+        console.log(longEar.jump)
     </script>
 </body>
 </html>

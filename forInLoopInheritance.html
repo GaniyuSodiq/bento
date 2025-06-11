@@ -31,6 +31,28 @@
                 console.log(`${key} : is inherited key`)
             }
         }
+
+        // TASKS CLASSW WORK
+        let head = {
+            galsses : 1
+        }
+        let table = {
+            __proto__:head,
+            pen: 3
+        }
+
+        let bed = {
+            __proto__: table,
+            pillow: 1,
+            sheet: 2
+        }
+        let pocket = {
+            __proto__: bed,
+            money: 2000
+        }
+
+        console.log(pocket.pen)
+        console.log(bed.galsses)
     </script>
 </body>
 </html>

@@ -55,23 +55,28 @@
         console.log(bed.galsses)
 
         let hamster = {
-            stomach : [],
+            // stomach : [],
             eat(food) {
                 this.stomach.push(food)
             }
         }
 
         let speedy = {
+            stomach: [],
             __proto__: hamster
         }
 
         let lazy = {
+            stomach: [],
             __proto__ : hamster
         }
 
         speedy.eat("Apple")
         console.log(speedy.stomach)
         console.log(lazy.stomach)
+
+        // As a common solution, all properties that describe the state of a particular object, 
+        // like stomach above, should be written into that object. That prevents such problems.
     </script>
 </body>
 </html>

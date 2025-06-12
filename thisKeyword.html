@@ -143,6 +143,25 @@
 
         getBrand.call(honda, "It is a ")
         getBrand.apply(audi, ["It is an "])
+
+        // ARROW FUNCTION
+        let getThis = () => this
+        console.log(getThis() === window) // true
+        // arrow fn does not have its own execution context
+        // it uses that of its outer function - in our above eg, the window is used
+        function Carr(){
+            this.speed = 120
+        }
+
+        Carr.prototype.getSpeed = ()=> {
+            return this.speed
+        }
+
+        let speedo = new Carr
+
+        console.log(speedo.getSpeed()) // undefined | bcs arrow fn cant see the obj as this
+        // arrow fnc references the global object - window, as the 'this obj'
+
     </script>
 </body>
 

@@ -112,20 +112,37 @@
         console.log(carr.getBrand()) // "Venza"
 
         // the only problem with constructor pattern is if u omit the 'new' when making an obj
-        let bmw = Car("BMW")
+        let bmw = new Car("BMW") // throws error if without the 'new'
         console.log(bmw.getBrand()) // Uncaught TypeError: Cannot read properties of undefined (reading 'getBrand')
         // the 'this' keyword in the Car uses window as the the object bcs 'new' is missing
 
         // Solution: we create a check to make sure that constructor is always call with 'new'
 
-        if (!(this instanceof (Car))) {
-            throw Error('Must use the new operator to call the function')
-        }
+        // if (!(this instanceof (Car))) {
+        //     throw Error('Must use the new operator to call the function')
+        // }
         // or using the new.target ES6 feature
 
         // if (!new.target){
         //     throw Error ('Must use the new operator to call the function')
         // }
+
+        // INDIRECT INVOCATION
+        // in fn call, use to get an obj for 'this' to use 
+        function getBrand(prefix){
+            console.log(prefix + this.brand)
+        }
+
+        let honda = {
+            brand: "Honda"
+        }
+
+        let audi = {
+            brand: "Audi"
+        }
+
+        getBrand.call(honda, "It is a ")
+        getBrand.apply(audi, ["It is an "])
     </script>
 </body>
 

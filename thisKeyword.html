@@ -31,7 +31,7 @@
 
         // LIKEWISE IN SIMPLE FUNCTION INVOCATION this references the window
 
-        function show(){
+        function show() {
             console.log(this === window) //true
         }
         show() // this is a simple fn references the window object
@@ -39,6 +39,16 @@
 
         // HOWEVER IN strict mode, this will be undefined
 
+        function showStrict() {
+            "use strict"
+            console.log(this === window) //false
+
+            console.log(this === undefined) //true
+
+        }
+        showStrict()
+        // strict mode affects nested functions too
+        // if "use strict" is placed at the top of js file, it affects the entire file
     </script>
 </body>
 

@@ -59,6 +59,41 @@
             }
         }
         console.log(car.getBrand()) // Honda
+
+
+        // STORING THE METHOD VALUE INTO A VARIABLE
+
+        // a method is a property on object, right?
+        // and you can store the vlaue into a variable
+        let brand = car.getBrand
+        console.log(brand()) // undefined
+
+        // you can store the result of calling the obj without any issue
+        // let brandy = car.getBrand()
+        // console.log(brandy) // Honda
+        // but that is not the point here
+
+        console.log(brand) // displays the function code
+        // which means this keyword is called when we run brand() but without the object - 
+        // so js use window as the obj for this in this case 
+        // we passed only the fn code into variable brand
+        
+        // to fix this without storing the fn call result as brand = car.getBrand()
+        // we use bind() 
+        // bind() method creates a new n whose this value is set
+
+        brand = car.getBrand.bind(car)
+        console.log(brand()) // Honda
+
+        // you use the bind() method to give a method an obj to use for 'this' value
+
+        let bike = {
+            brand: "Harley Davidson"
+        }
+
+        brand = car.getBrand.bind(bike)
+        console.log(brand()) // Harley Davidson
+
     </script>
 </body>
 

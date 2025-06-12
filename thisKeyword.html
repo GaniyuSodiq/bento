@@ -49,6 +49,16 @@
         showStrict()
         // strict mode affects nested functions too
         // if "use strict" is placed at the top of js file, it affects the entire file
+
+        // METHOD INVOCATION
+        // when u call a method in an obj, this references the obj from which d methos is called
+        let car = {
+            brand: "Honda",
+            getBrand() {
+                return this.brand
+            }
+        }
+        console.log(car.getBrand()) // Honda
     </script>
 </body>
 

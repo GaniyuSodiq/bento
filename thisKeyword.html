@@ -21,7 +21,13 @@
         // let moreMoney = ++money // money++ never works
         // console.log(moreMoney)
 
-        console.log(counter.next())
+        console.log(counter.next()) // this references the object that is currently calling the fn
+
+        // HOWEVER, IN THE GLOBAL CONTEXT, this REFERENCES THE WINDOW
+
+        console.log(this === window) // true
+        this.color = "red"
+        console.log(window.color) // "red"
 
     </script>
 </body>

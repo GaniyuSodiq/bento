@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>this KEYWORD</title>
 </head>
+
 <body>
     <script>
         // the thins keyword references the object that is currently calling the function
-        
+        let counter = {
+            count: 0,
+            next: function () {
+                return ++this.count // this looks srange to me. I was expecting this.count++
+            }
+        }
+
+        // let money = 0
+        // let moreMoney = ++money // money++ never works
+        // console.log(moreMoney)
+
+        console.log(counter.next())
+
     </script>
 </body>
+
 </html>

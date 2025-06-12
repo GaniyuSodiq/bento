@@ -77,7 +77,7 @@
         // which means this keyword is called when we run brand() but without the object - 
         // so js use window as the obj for this in this case 
         // we passed only the fn code into variable brand
-        
+
         // to fix this without storing the fn call result as brand = car.getBrand()
         // we use bind() 
         // bind() method creates a new n whose this value is set
@@ -94,6 +94,38 @@
         brand = car.getBrand.bind(bike)
         console.log(brand()) // Harley Davidson
 
+
+        // CONSTRUCTOR INVOCATION
+        function Car(brand) {
+            if (!new.target) {
+                throw Error('Must use the new operator to call the function')
+            }
+            this.brand = brand
+        }
+
+        Car.prototype.getBrand = function () {
+            return this.brand
+        }
+
+        let carr = new Car("Venza") // we invoke the constructor to create a new obj 
+        // and set the this.brand = "Venza"
+        console.log(carr.getBrand()) // "Venza"
+
+        // the only problem with constructor pattern is if u omit the 'new' when making an obj
+        let bmw = Car("BMW")
+        console.log(bmw.getBrand()) // Uncaught TypeError: Cannot read properties of undefined (reading 'getBrand')
+        // the 'this' keyword in the Car uses window as the the object bcs 'new' is missing
+
+        // Solution: we create a check to make sure that constructor is always call with 'new'
+
+        if (!(this instanceof (Car))) {
+            throw Error('Must use the new operator to call the function')
+        }
+        // or using the new.target ES6 feature
+
+        // if (!new.target){
+        //     throw Error ('Must use the new operator to call the function')
+        // }
     </script>
 </body>
 

@@ -177,7 +177,30 @@
 
         console.log(Object.getPrototypeOf(son))
 
+        function ObjectFactory () {
+            if (!new.target){
+                throw Error("You must use the new operator to call the function/constructor")
+            }
+            // const obj = {}
+            this.property = "I'm a property"
+            // return obj
+        }
 
+        let obj = new ObjectFactory()
+
+        console.log(typeof ObjectFactory.prototype) // Object
+        console.log(ObjectFactory.prototype.isPrototypeOf(obj)) // true
+
+        // assessing prototype properties
+
+        ObjectFactory.prototype.prop = "I'm a property of ObjectFactory.prototype"
+
+        console.log(obj) // just property = "I'm a property" is here. 
+        // bcs obj doesnt own the constructor.property 
+        // it only search through it when it recieves a call for a prop thats not in itself
+        console.log(obj.prop) // "I'm a property of ObjectFactory.prototype"
+        // searches through itself but cant find the 'prop' property
+        // then searches through its origin ie its prototype and finds 'prop'
     </script>
 </body>
 

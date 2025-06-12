@@ -162,6 +162,22 @@
         console.log(speedo.getSpeed()) // undefined | bcs arrow fn cant see the obj as this
         // arrow fnc references the global object - window, as the 'this obj'
 
+        // OBJECT PROTOTYPE
+        // prototype is the object where an obj descends or inherits from
+        // __proto__ old way of modifying prototype in js
+        // Object.setPrototypeOf(obj, prototype) and Object.getPrototypeOf(obj) new way 2 modify
+
+        let father = {}
+        let son = {}
+
+        console.log(Object.getPrototypeOf(father))
+        console.log(Object.getPrototypeOf(son))
+
+        Object.setPrototypeOf(son, father)
+
+        console.log(Object.getPrototypeOf(son))
+
+
     </script>
 </body>
 

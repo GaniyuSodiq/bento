@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object dot Create method</title>
+</head>
+
+<body>
+    <script>
+        // Object.create makes the prototype inheritance possible in js
+        // Object() is the object where all other objects originate from
+        // it is a constructor ie function that creates/act as templest for objects
+
+        console.dir(Object)
+
+        // it has many methods. .create() is one of them 
+        // object.create takes 2 args - one is protoObj and an optional propertyObj
+        // Object.create(prototypeObject, propertyObject)
+        const myObj = Object.create(Object.prototype)
+
+        console.log(myObj)
+        console.dir(myObj)
+        console.dir(Object) 
+
+        // create an Object that has no prototypes - remeber default proto references the Almight Obj
+        const noProto = Object.create(null)
+
+        console.dir(noProto)
+
+        // Using Object.create to make an object from constructor
+
+        // function Car(color) {
+        //     this.color = color
+        // }
+
+        const Car = function(color) {
+            this.color = color
+        }
+
+        const car1 = new Car("red")
+
+        // this doesnt run the constructor. So the 
+        const car2 = Object.create(Car.prototype)
+
+        console.dir(car1)
+        console.dir(car2)
+
+        // besides creating obj, 
+        // the main purpose of obj.create mthd is to extend constructors
+        // see the example below extending Car constructor
+
+        // give Car constructor proto method
+        Car.prototype = {
+            getColor(){
+                return this.color
+            }
+        }
+
+        // make another car constructor called ToyCar
+        // we want ToyCar to extend car 
+        // ie ToyCar should have all Car has and more 
+        // we want ToyCar to have all Car props and methods
+        // we want to set ToyCar proto to Car proto
+        // we can do that using Object.create() method
+
+        const ToyCar = function(){
+
+        }
+
+        // THESE TWO PERFORM THE SAME FUNCTION
+        // ToyCar.prototype = Object.create(Car.prototype)
+        // Object.setPrototypeOf(ToyCar.prototype, Car.prototype)
+        ToyCar.prototype = Object.create(Car.prototype)
+        
+        const legoCar = new ToyCar()
+
+        console.dir(legoCar)
+
+        console.dir(legoCar instanceof ToyCar) // bcs legoCar is from ToyCar constructor
+        console.dir(legoCar instanceof Car) // bcs ToyCar.prototype = Object.create(Car.prototype)
+        console.dir(legoCar instanceof Object) // bcs Car is from Almighty Object
+
+        console.dir(ToyCar.prototype.isPrototypeOf(legoCar))
+        console.dir(Car.prototype.isPrototypeOf(legoCar))
+        console.dir(Object.prototype.isPrototypeOf(legoCar))
+
+        // in summary OBJECT.CREATE() HELPS YOU EXTEND CONSTRUCTOR
+
+        let mamiCar = new ToyCar()
+
+
+    </script>
+</body>
+
+</html>

@@ -14,14 +14,20 @@
         function Dog(name) {
             this.name = name
             let barkCount = 0
+            // we declare this method in the constructor bcs this method make use of a local variable
+            // the barkCount is a variable local to this Dog constructor
             this.bark = function () {
                 barkCount++
                 return `${this.name} barks`
             }
+            // we declare this method in the constructor bcs this method make use of a local variable
+            // the barkCount is a variable local to this Dog constructor
             this.barked = function () {
                 return `${this.name} has barked ${barkCount} ${barkCount > 1 ? "times" : "time"}`
             }
         }
+
+        
 
         Dog.prototype.wagTail = function () {
             return `${this.name} is wagging its tail`

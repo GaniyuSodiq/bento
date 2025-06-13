@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor VS Prototype Method</title>
+</head>
+
+<body>
+    <script>
+        // THIS TUTORIAL IS ON WHEN TO USE ASSIGN METHOD TO CONSTRUCTOR
+        // AND WHEN TO ASSIGN IT TO .PROTOTYPE
+        function Dog(name) {
+            this.name = name
+            let barkCount = 0
+            this.bark = function () {
+                barkCount++
+                return `${this.name} barks`
+            }
+            this.barked = function () {
+                return `${this.name} has barked ${barkCount} ${barkCount > 1 ? "times" : "time"}`
+            }
+        }
+
+        Dog.prototype.wagTail = function () {
+            return `${this.name} is wagging its tail`
+        }
+
+        const dog = new Dog("Bingo")
+
+        console.log(dog.bark())
+        console.log(dog.barked())
+        console.log(dog.wagTail())
+        console.log(dog.bark())
+        console.log(dog.barked())
+    </script>
+</body>
+
+</html>

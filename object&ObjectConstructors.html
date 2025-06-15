@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object and Object Constructor</title>
 </head>
+
 <body>
     <script>
+        // OBJECT
         const myObject = {
             property: "Value",
             otherProperty: 77,
-            "obnoxious property": function(){
+            "obnoxious property": function () {
                 // do stuff
             }
         }
@@ -35,6 +38,55 @@
         // so we have myOject["property"] which gave use "Value"
 
 
+
+        // CONSTRUCTOR
+
+        // example 1
+        const playerOneName = "Tim"
+        const playerOneMarker = "X"
+        const playerTwoName = "Jenn"
+        const playerTwoMarker = "X"
+
+        // example 2
+        const playerOne = {
+            name: "Tim",
+            marker: "X",
+            score: 5,
+        }
+        const playerTwo = {
+            name: "Jenn",
+            marker: "O",
+            score: 10,
+        }
+
+        // the beauty of object is that we can write re-usebale fns to access data
+        
+        function printName(player){
+            console.log(player.name)
+        }
+        printName(playerOne) // "Tim"
+        printName(playerOne) // "Jenn"
+        // this would take more efforts if we are to get the names using the example 1 
+
+        // example 2 is even more useful when we dont know what player name to print
+        // imagine we are in a game where another function determines the winner from a certain score
+        // see the fns below
+
+        function gameOver(winningPlayer){
+            console.log("Congratulations")
+            console.log(winningPlayer.name + " Is the winner")
+        }
+
+        function keepScore() {
+            if (playerOne.score >= 10){
+                gameOver(playerOne)
+            } else if (playerTwo.score >= 10){
+                gameOver(playerTwo)
+            }
+        }
+
+        keepScore()
     </script>
 </body>
+
 </html>

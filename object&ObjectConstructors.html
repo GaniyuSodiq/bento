@@ -150,7 +150,16 @@
         // this will set EightGrader prototype to Student prototype 
         // and thats no what we want in most cases, we want to extend one protype to the other 
 
-        // we can use a constructor to give the Object additional properties
+        
+        // THIS
+        // 'this' is use to reference the object tht is executed in the current function
+
+        function test() {
+            console.log(this)
+        }
+        test() // Window
+        // this fn executed in the global context so the object here is Window 
+        // ie 'this' == Window in global context
     </script>
 </body>
 

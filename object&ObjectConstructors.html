@@ -46,7 +46,6 @@
         const playerOneMarker = "X"
         const playerTwoName = "Jenn"
         const playerTwoMarker = "X"
-
         // example 2
         const playerOne = {
             name: "Tim",
@@ -59,8 +58,7 @@
             score: 10,
         }
 
-        // the beauty of object is that we can write re-usebale fns to access data
-        
+        // the beauty of object is that we can write re-usebale fns to access data        
         function printName(player){
             console.log(player.name)
         }
@@ -86,6 +84,32 @@
         }
 
         keepScore()
+        // Congratulations
+        // Jenn Is the winner
+
+
+        // CONSTRUCTOR
+        // if we have a specific object that we need to duplicate - like players in a game
+        // a convinient way to create them is by using constructor
+
+        function Player(name, marker){
+            // const obj = {}
+            this.name = name
+            this.marker = marker
+            this.sayName = function(){
+                console.log(name)
+            }
+            // return obj
+        }
+        // this.property will be the key and the and the parameters we pass into the fn will be the value(s)
+        // then we can create an object from the constructor
+        const player1 = new Player("Steve", "X")
+        console.log(player1.name) // "Steve"
+        const player2 = new Player("Stephanie", "O")
+        player1.sayName() // "Steve"
+
+
+
     </script>
 </body>
 

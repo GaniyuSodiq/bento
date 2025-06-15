@@ -59,26 +59,26 @@
         }
 
         // the beauty of object is that we can write re-usebale fns to access data        
-        function printName(player){
+        function printName(player) {
             console.log(player.name)
         }
         printName(playerOne) // "Tim"
-        printName(playerOne) // "Jenn"
+        printName(playerTwo) // "Jenn"
         // this would take more efforts if we are to get the names using the example 1 
 
         // example 2 is even more useful when we dont know what player name to print
         // imagine we are in a game where another function determines the winner from a certain score
         // see the fns below
 
-        function gameOver(winningPlayer){
+        function gameOver(winningPlayer) {
             console.log("Congratulations")
             console.log(winningPlayer.name + " Is the winner")
         }
 
         function keepScore() {
-            if (playerOne.score >= 10){
+            if (playerOne.score >= 10) {
                 gameOver(playerOne)
-            } else if (playerTwo.score >= 10){
+            } else if (playerTwo.score >= 10) {
                 gameOver(playerTwo)
             }
         }
@@ -92,11 +92,11 @@
         // if we have a specific object that we need to duplicate - like players in a game
         // a convinient way to create them is by using constructor
 
-        function Player(name, marker){
+        function Player(name, marker) {
             // const obj = {}
             this.name = name
             this.marker = marker
-            this.sayName = function(){
+            this.sayName = function () {
                 console.log(name)
             }
             // return obj
@@ -107,9 +107,50 @@
         console.log(player1.name) // "Steve"
         const player2 = new Player("Stephanie", "O")
         player1.sayName() // "Steve"
+        player2.sayName() // "Stephanie"
 
+        // lets look at object from another angle
+        // every object in javascript has another object called prototype
+        // the prototype is the obj where an obj inherits from
+        // the obj has access to the prototype's methods and properties
 
+        // when using constructors to create obj, 
+        // it is best to define methods on the prototype
+        // the only situation u are to define method in the constructor is
+        // when the method use a local variable that is declared in the constructor
+        // so all the methods created on the constructor prototype will be ...
+        // available to all the objs created from the constructor
+        function Student(name, grade) {
+            this.name = name
+            this.grade = grade
+        }
 
+        Student.prototype.sayName = function () {
+            console.log(this.name)
+        }
+        Student.prototype.goToProm = function () {
+            console.log("Eh. Go to prom?")
+        }
+        const studentOne = new Student("Susan", 9)
+        console.log(studentOne.sayName()) // "Susan"
+        const studentTwo = new Student("Juliet", 12)
+        console.log(studentTwo.goToProm()) // "Eh. Go to prom?"
+
+        // OBJECT.CREATE()
+        // the recommended way of setting a prototype is using Object.create()
+
+        function EightGrader(name) {
+            this.name = name
+            this.grade = 8
+        }
+        // we want EightGrader constructor to inherit the prototype of Student constructor
+        EightGrader.prototype = Object.create(Student.prototype) // GOOD WAY
+
+        // EightGrader.prototype = Student.prototype // BAD WAY
+        // this will set EightGrader prototype to Student prototype 
+        // and thats no what we want in most cases, we want to extend one protype to the other 
+
+        // we can use a constructor to give the Object additional properties
     </script>
 </body>
 

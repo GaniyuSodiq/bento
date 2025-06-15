@@ -15,14 +15,14 @@
             }
         }
 
-        console.log(myObject.property)
-        console.log(myObject["obnoxious property"])
+        console.log(myObject.property) // "Value"
+        console.log(myObject["obnoxious property"]) // f ()
 
         // array [] uses number (0, 1, 2 ...) to identify / pick its values
         // object {} uses string ("string1", "string2", "string3" ...) to identify / pick its values
         // obj.string1 and obj.["string"] will identify/pick the value
         // obj.[string] ie without quotes, will make make the string serve as variable
-        
+
         // inserting a variable into an object
         const variable = "property"
         console.log(myObject.variable) // undefined
@@ -30,7 +30,9 @@
 
         console.log(myObject[variable]) // "Value"
         // this makes the [text] act as place holder variable where 
-        // we indicate what property the obj should search for
+        // we indicate what property the obj should search for 
+        // and in this case, "property" is indicated 
+        // so we have myOject["property"] which gave use "Value"
 
 
     </script>

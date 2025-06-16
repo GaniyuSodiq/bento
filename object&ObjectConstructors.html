@@ -226,7 +226,8 @@
                     // bcs the fn in our forEach is a callback fn 
                     // and the callback fn is not linked to our obj
                     // which is the reseon for the 'undefined'
-                    console.log(this) // {test: "test"}
+                    // console.log(this) // {test: "test"}
+                    console.log(this.firstName) // user4{...}
                     console.log(hobby)
                 // }, {test: "test"}) // We can give an obj after the callback fn
                 // it is this obj that the callback fn will use as reference for its 'this'
@@ -239,6 +240,19 @@
         }
 
         user4.listHobbies()
+
+
+        // example 5
+        // lets see how 'this' keyword works with coonstructor functions
+
+        function User(name){
+            this.name = name
+            console.log(this)
+        }
+        const devsage = new User("DevSage") // User {name: 'DevSage'}
+        // whenever you create an object using the 'new' keyword.
+        // the 'this' will reference the object that you just created
+        const codingphase = new User("CodingPhase") // User {name: 'CodingPhase'}
     </script>
 </body>
 

@@ -150,7 +150,7 @@
         // this will set EightGrader prototype to Student prototype 
         // and thats no what we want in most cases, we want to extend one protype to the other 
 
-        
+
         // THIS
         // 'this' is use to reference the object tht is executed in the current function
 
@@ -167,8 +167,8 @@
         const user = {
             firstName: "Patrick",
             lastName: "Scott",
-            fullName: function() {
-                console.log(this) // 
+            fullName: function () {
+                console.log(this) // 'this' here refers to the user{} object
                 console.log(this.firstName + " " + this.lastName)
             }
         }
@@ -176,6 +176,27 @@
         user.fullName()
         // {firstName: 'Patrick', lastName: 'Scott', fullName: ƒ}
         // Patrick Scott
+
+        // another example
+
+        const user2 = {
+            firstName: "Patrick",
+            lastName: "Scott",
+            fullName: () => { // arrow fn dont work excatly the same way as regular fn do
+                // arrow function dont have their own 'this' scope
+                // they will use the 'this' scope of their nearest regular fn
+                // and in this case, there's no nearest nearest reguar fn
+                // so it is going to use the windows obj
+                console.log(this)
+                console.log(this.firstName + " " + this.lastName)
+            }
+        }
+
+        user2.fullName()
+        // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+        // undefined undefined
+        // arrow function will inherit the scope of the nearest regular fn
+        // so if no regular fn, it is going to inherit the global scope
 
 
     </script>

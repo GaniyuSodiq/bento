@@ -222,12 +222,14 @@
             hobbies: ["Programming", "Piano"],
             listHobbies: function() {
                 this.hobbies.forEach(function(hobby){
-                    console.log(this.firstName) // undefined
+                    // console.log(this.firstName) // undefined
                     // bcs the fn in our forEach is a callback fn 
                     // and the callback fn is not linked to our obj
                     // which is the reseon for the 'undefined'
+                    console.log(this) // {test: "test"}
                     console.log(hobby)
-                })
+                }, {test: "test"}) // We can give an obj after the callback fn
+                // it is this obj that the callback fn will use as reference for its 'this'
             }
         }
 

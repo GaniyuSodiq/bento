@@ -162,7 +162,7 @@
         // ie 'this' == Window in global context
         // 'this' is reference to whatever object is calling the function
 
-        // another examples
+        // example 1
 
         const user = {
             firstName: "Patrick",
@@ -177,7 +177,7 @@
         // {firstName: 'Patrick', lastName: 'Scott', fullName: ƒ}
         // Patrick Scott
 
-        // another example
+        // example 2
 
         const user2 = {
             firstName: "Patrick",
@@ -198,7 +198,21 @@
         // arrow function will inherit the scope of the nearest regular fn
         // so if no regular fn, it is going to inherit the global scope
 
+        // example 3
+        const user3 = {
+            firstName: "Patrick",
+            lastName: "Scott",
+            fullName: function () {
+                const arrowFunction = () => { // arrow fn inherit the scope of the nearest regular function
+                    console.log("Example 3")
+                    console.log(this) // so 'this' in our arrow fn inherit the value of 'this' in the nearest regular fn
+                    console.log(this.firstName + " " + this.lastName)
+                }
+                arrowFunction()
+            }
+        }
 
+        user3.fullName()
     </script>
 </body>
 

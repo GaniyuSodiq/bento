@@ -213,6 +213,21 @@
         }
 
         user3.fullName()
+
+        // example 4
+
+        const user4 = {
+            firstName: "Patrick",
+            lastName: "Scott",
+            hobbies: ["Programming", "Piano"],
+            listHobbies: function() {
+                this.hobbies.forEach(function(hobby){
+                    console.log(hobby)
+                })
+            }
+        }
+
+        user4.listHobbies()
     </script>
 </body>
 

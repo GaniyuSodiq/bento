@@ -228,8 +228,13 @@
                     // which is the reseon for the 'undefined'
                     console.log(this) // {test: "test"}
                     console.log(hobby)
-                }, {test: "test"}) // We can give an obj after the callback fn
+                // }, {test: "test"}) // We can give an obj after the callback fn
                 // it is this obj that the callback fn will use as reference for its 'this'
+                }, this) // instead of bring our user4{...} here, we can just use 'this'
+                // this works bcs we are outside the scope of the callback fun | function(hobby){}, this |
+                // and outside the callback fn is our obj (user4) and 'this' work in here
+
+                // it is important to note that not all methods are going to allow your t pass in 'this' reference here
             }
         }
 
